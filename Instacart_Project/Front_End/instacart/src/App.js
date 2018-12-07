@@ -5,8 +5,11 @@ import { Sign_Up } from './components/Sign_Up/Sign_up';
 
 
 class App extends React.Component {
+  handleSignup =()=>{
+
+  }
   render() {
-  return <Sign_Up/>
+  return <Sign_Up handleSignUp={this.handleSignup} />
   }
 }
 
