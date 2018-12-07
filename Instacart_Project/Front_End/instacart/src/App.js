@@ -8,6 +8,9 @@ import Error from './components/Error/Error';
 
 
 class App extends React.Component {
+  handleSignup =()=>{
+
+  }
   render() {
     return (
       <Router>
