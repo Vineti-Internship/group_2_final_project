@@ -2,21 +2,51 @@ import React from 'react';
 import './Sign_in.css';
 
 
-export const Sign_In = (/*props*/) => {
+export class Sign_In extends React.Component {
 
-    let formFields = {};
+    constructor(){
+        super()
+
+        this.state = {
+            email: '',
+            password: '',
+        }
+
+        this.handleSignIn = this.handleSignIn.bind(this);
+    }
+
+    async handleSignIn() {
+
+    fetch('http://localhost:3000/sessions', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify ({    
+        email: this.state.email,
+        password: this.state.password,
+        })
+        
+    }).then((response) => {return response.json(); })
+    .then((data) => console.log(data))
+
+    }
     
-   
+    render() {
     return (
       
-        <form onSubmit={ (e) => {e.preventDefault(); /*props.handleSignIn(formFields.email.value, formFields.password.value); */ e.target.reset(); }}>
-            <h1 id="h1">Sign In</h1>
-            <input ref={input => formFields.email = input} type="text" placeholder="Email"></input>
-            <br></br>
-            <input ref={input => formFields.password = input} type="password" placeholder="Password"></input>
-            <br></br>
-            <button>Sign In</button>
-        </form>
+        <div>
+        <h1 id='h1'>Sign In</h1>
+        <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = {
+        (event) => {this.setState({email: event.target.value})} } />
+        <br></br>
+        <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = {
+        (event) => {this.setState({password: event.target.value})} } />
+        <br></br>
+        <input type='submit' value='Submit' onClick= {this.handleSignIn}/>
+        </div>
       
-    );
-};
+     )
+   }
+}
