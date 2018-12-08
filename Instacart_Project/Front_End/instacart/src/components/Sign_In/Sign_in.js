@@ -17,7 +17,7 @@ export class Sign_In extends React.Component {
 
     async handleSignIn() {
 
-    fetch('http://localhost:3000/sessions', {
+    const response = await fetch('http://localhost:3000/sessions', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -28,8 +28,9 @@ export class Sign_In extends React.Component {
         password: this.state.password,
         })
         
-    }).then((response) => {return response.json(); })
-    .then((data) => console.log(data))
+    })
+    const json = await response.json();
+    console.log(json)
 
     }
     
