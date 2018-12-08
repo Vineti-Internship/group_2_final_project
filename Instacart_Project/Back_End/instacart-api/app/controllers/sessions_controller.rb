@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    # when logging in do
+    #When logging in do
     def create
       
      @user = User.where(email: params[:email]).first
@@ -13,10 +13,8 @@ class SessionsController < ApplicationController
  
     end
  
-    #when logging out do
+    #When logging out do
     def destroy
-
-     current_user = @user
 
      current_user&.authentication_token = nil
 

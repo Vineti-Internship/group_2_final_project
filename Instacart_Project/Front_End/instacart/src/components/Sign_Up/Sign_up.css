@@ -1,22 +1,22 @@
 body {
-    background: #780206;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #D3CCE3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-align: center;
 }
 
-form {
+div {
     width: 30%;
     border: 2px solid gray;
     border-radius: 5px;
     margin: 0 auto;
-    margin-top: 110px;
+    margin-top: 130px;
     padding-bottom: 20px;
 }
 
 #h1 {
-    color: whitesmoke;
-    font-family: 'Playfair Display', serif;
+    color: rgb(146, 114, 114);
+    font-family: 'Montserrat', serif;
 }
 
 input, button {

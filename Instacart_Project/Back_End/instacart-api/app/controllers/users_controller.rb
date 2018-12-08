@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  
-    # Authenticate user before he/she can access to actions 
-    before_action :authenticate_user!, :except => [:create]
-    before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
     
     # GET /users
     def index
