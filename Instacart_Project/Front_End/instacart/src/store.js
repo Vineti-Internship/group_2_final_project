@@ -1,12 +1,15 @@
 import {createStore, combineReducers,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {rootReducer} from './reducers/rootReducer';
 import {orderReducer} from './reducers/orderReducer';
 
-export default createStore(
+const initialState = {};
+const store = createStore(
     combineReducers({
-    'root':rootReducer,
-    'order': orderReducer,
+        'root':rootReducer,
+        'order': orderReducer,
     }),
+    initialState,
     applyMiddleware(thunk)
 );
+
+export default store;

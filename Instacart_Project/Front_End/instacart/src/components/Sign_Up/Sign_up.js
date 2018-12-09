@@ -2,9 +2,7 @@ import React from 'react';
 import './Sign_up.css';
 
 
-
-
-export class Sign_Up extends React.Component {
+export class SignUp extends React.Component {
 
     constructor(){
         super()
@@ -20,6 +18,11 @@ export class Sign_Up extends React.Component {
         }
 
         this.handleSignUp = this.handleSignUp.bind(this);
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     async handleSignUp() {
@@ -57,23 +60,22 @@ export class Sign_Up extends React.Component {
       
         <div>
         <h1 id='h1'>Sign Up</h1>
-        <input type='text' placeholder='First Name' name='firstName' value={this.state.firstName} onChange = { (event) => {this.setState({firstName: event.target.value})}}/>
+        <input type='text' placeholder='First Name' name='firstName' value={this.state.firstName} onChange = { this.onChange }/>
         <br></br>
-        <input type='text' placeholder='Last Name' name='lastName' value={this.state.lastName} onChange = { (event) => {this.setState({lastName: event.target.value})}}/>
+        <input type='text' placeholder='Last Name' name='lastName' value={this.state.lastName} onChange = { this.onChange }/>
         <br></br>
         <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = {
-        (event) => {this.setState({email: event.target.value})} } />
+        this.onChange } />
         <br></br>
-        <input type='text' placeholder='Address' name='address' value={this.state.address} onChange = { (event) => {this.setState({address: event.target.value})}}/>
+        <input type='text' placeholder='Address' name='address' value={this.state.address} onChange = { this.onChange }/>
         <br></br>
-        <input type='number' placeholder='Phone' name='phone' value={this.state.phone} onChange = { (event) => {this.setState({phone: event.target.value})}}/>
+        <input type='number' placeholder='Phone' name='phone' value={this.state.phone} onChange = { this.onChange }/>
         <br></br>
-        <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = {
-        (event) => {this.setState({password: event.target.value})} } />
+        <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = { this.onChange } />
         <br></br>
-        <input type='password' placeholder='Password Confirmation' name='confirmPassword' value={this.state.confirmPassword} onChange = { (event) => {this.setState({confirmPassword: event.target.value})}}/>
+        <input type='password' placeholder='Password Confirmation' name='confirmPassword' value={this.state.confirmPassword} onChange = { this.onChange }/>
         <br></br>
-        <input type='submit' value='Submit' onClick= {this.handleSignUp}/>
+        <input type='submit' value='Submit' onClick = {this.handleSignUp}/>
         </div>
       
      )

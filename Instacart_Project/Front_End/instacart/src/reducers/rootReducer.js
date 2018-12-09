@@ -1,10 +1,6 @@
-const initialState = {
-    user: {}
-}
+import { combineReducers } from 'redux';
+import  signInReducer  from './signInReduser';
 
-export const rootReducer = (state = initialState, action) => {
-    switch(action.type){
-        default:
-            return state; 
-    }
-}
+export default combineReducers({
+    users: signInReducer
+})
