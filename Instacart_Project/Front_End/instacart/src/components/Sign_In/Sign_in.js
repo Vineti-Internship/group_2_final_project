@@ -2,8 +2,7 @@ import React from 'react';
 import './Sign_in.css';
 import { connect } from 'react-redux';
 import { signInUser } from '../../actions/signInAction';
-//
-import store from '../../store';
+// import store from '../../store';
 
 class SignIn extends React.Component {
 
@@ -25,39 +24,18 @@ class SignIn extends React.Component {
 
     componentWillReceiveProps(nextProps){
         if(nextProps.logInResponse) {
-
             console.log(nextProps.logInResponse)
-            //
-            console.log(store.getState());
-
+            // console.log(store.getState());
         }
     }
 
     handleSignIn() {
-
-
         const logInData = {
             email: this.state.email,
             password: this.state.password
         };
 
         this.props.signInUser(logInData);
-
-    // const response = await fetch('http://localhost:3000/sessions', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify ({    
-    //     email: this.state.email,
-    //     password: this.state.password,
-    //     })
-        
-    // })
-    // const json = await response.json();
-    // console.log(json)
-
     }
     
     render() {
@@ -75,7 +53,7 @@ class SignIn extends React.Component {
         </div>
       
      )
-   }
+    }
 }
 
 const mapStateToProps = state => ({

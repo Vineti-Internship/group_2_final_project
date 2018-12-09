@@ -9,14 +9,7 @@ console.log('action called')
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify (
-        // {    
-        // email: this.state.email,
-        // password: this.state.password,
-        // }
-        postData
-        )
-        
+        body: JSON.stringify(postData)        
     })
     .then(res => res.json())
     .then(userInfo =>
@@ -24,7 +17,5 @@ console.log('action called')
             type: USER_SIGNIN,
             payload: userInfo
         })
-        )
-    // const json = await response.json();
-    // console.log(json)
+    )
 }

@@ -9,9 +9,6 @@ import Header from './components/Header/Header';
 
 
 class App extends React.Component {
-  handleSignup =()=>{
-
-  }
   render() {
     return (
       <Router>
