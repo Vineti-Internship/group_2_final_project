@@ -1,13 +1,10 @@
-import {createStore, combineReducers,applyMiddleware} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {orderReducer} from './reducers/orderReducer';
+import rootReducer from './reducers/rootReducer';
 
 const initialState = {};
 const store = createStore(
-    combineReducers({
-        'root':rootReducer,
-        'order': orderReducer,
-    }),
+    rootReducer,
     initialState,
     applyMiddleware(thunk)
 );

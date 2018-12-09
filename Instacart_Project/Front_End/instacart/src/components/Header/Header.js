@@ -46,7 +46,7 @@ function Header(props) {
 
 
   return (     
-        <Toolbar id='toolbar'>
+        <Toolbar id='toolbar' className='con'>
           <IconButton id='menuIcon' className={classes.menuButton} color='inherit' aria-label='Menu'>
             <MenuIcon />
           </IconButton>

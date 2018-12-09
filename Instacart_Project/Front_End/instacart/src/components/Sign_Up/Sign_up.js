@@ -1,5 +1,5 @@
 import React from 'react';
-import './Sign_up.css';
+// import './Sign_up.css';
 
 
 export class SignUp extends React.Component {
@@ -58,7 +58,7 @@ export class SignUp extends React.Component {
    render() {
     return (
       
-        <div>
+        <div className='con'>
         <h1 id='h1'>Sign Up</h1>
         <input type='text' placeholder='First Name' name='firstName' value={this.state.firstName} onChange = { this.onChange }/>
         <br></br>

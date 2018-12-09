@@ -29,7 +29,7 @@ const styles = () => ({
     },
 });
 
-function MediaControlCard(props) {
+const MediaControlCard= (props)=> {
     const { classes } = props;
 
     return (

@@ -7,6 +7,6 @@ export default (order = initialState, action) => {
     case actionTypes.addToOrder:
         return [...order, action.payload];
     default:
-      return products;
+      return order;
   }
 };

@@ -10,7 +10,8 @@ import Badge from '@material-ui/core/Badge';
 const styles = theme => ({
     wrapper: {
         margin: theme.spacing.unit * 2,
-        maxHeight:'60vh'
+        maxHeight:'60vh',
+        textAlign:'left'
     },
 });
 
@@ -54,6 +55,7 @@ class SimplePopover extends React.Component {
                 </IconButton>
                 <Popover
                     id='simple-popper'
+                    
                     open={open}
                     anchorEl={anchorEl}
                     onClose={this.handleClose}

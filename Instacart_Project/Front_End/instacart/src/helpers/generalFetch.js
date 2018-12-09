@@ -3,7 +3,8 @@ const defaultHeaders = {
     'Content-Type': 'application/json',
   };
   
-export const generalFetch = async (url, method, body, headers = defaultHeaders) => {
+//body={} for get requests
+export const generalFetch = async (url, method, body={}, headers = defaultHeaders) => {
     try {
         const response = await fetch(`http://localhost:3000/${url}`,{
             method,

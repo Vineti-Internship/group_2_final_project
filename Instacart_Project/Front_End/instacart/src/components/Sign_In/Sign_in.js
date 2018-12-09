@@ -63,7 +63,7 @@ class SignIn extends React.Component {
     render() {
     return (
       
-        <div>
+        <div className='con'>
         <h1 id='h1'>Sign In</h1>
         <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = {
         this.onChange } />

@@ -1,0 +1,22 @@
+.padB{
+    padding-bottom: 25px !important;  
+}
+.marginB{
+    margin-bottom: 25px !important;
+}
+
+.RemoveStyle,.RemoveStyle div {
+    width: auto !important;
+    border: unset !important;
+    border-radius: unset !important;
+    margin: unset !important;
+    padding-bottom: unset !important;
+    text-align: left !important;
+}
+
+* {
+    font-family: 'Roboto', sans-serif !important;
+}
+.right{
+    float: right !important;
+}
