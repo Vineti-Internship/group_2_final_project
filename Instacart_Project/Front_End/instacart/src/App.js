@@ -12,9 +12,6 @@ import Header from './components/Header/Header';
 import Backet from './components/card/main'
 
 class App extends React.Component {
-  handleSignup =()=>{
-
-  }
   render() {
     return (
       <Router>
