@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './Header.css';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -8,21 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
-
-// const Header = (props) => {
-//     return (
-//         <React.Fragment>
-//             <h1>Header</h1>
-//             <Link to='/signin'>Sign In</Link>
-//             <br />
-//             <Link to='/signup'>Sign Up</Link>
-//         </React.Fragment>
-//     )
-// }
-
-// export default Header;
-
 
 
 const styles = {
@@ -52,8 +37,8 @@ function Header(props) {
           <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
             Instacart
           </Typography>
-          <Button id='signInButton' color='inherit' href='/signin'>Sign In</Button>
-          <Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button>
+          <Link to='/signin'><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
+          <Link to='/signup'><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
         </Toolbar>    
   );
 }

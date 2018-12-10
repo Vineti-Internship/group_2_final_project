@@ -56,11 +56,12 @@ export class SignUp extends React.Component {
     }
     
    render() {
+       const {firstName} = this.state;
     return (
       
         <div className='con'>
         <h1 id='h1'>Sign Up</h1>
-        <input type='text' placeholder='First Name' name='firstName' value={this.state.firstName} onChange = { this.onChange }/>
+        <input type='text' placeholder='First Name' name='firstName' value={firstName} onChange = { this.onChange }/>
         <br></br>
         <input type='text' placeholder='Last Name' name='lastName' value={this.state.lastName} onChange = { this.onChange }/>
         <br></br>
@@ -69,7 +70,7 @@ export class SignUp extends React.Component {
         <br></br>
         <input type='text' placeholder='Address' name='address' value={this.state.address} onChange = { this.onChange }/>
         <br></br>
-        <input type='number' placeholder='Phone' name='phone' value={this.state.phone} onChange = { this.onChange }/>
+        <input type='text' placeholder='Phone' name='phone' value={this.state.phone} onChange = { this.onChange }/>
         <br></br>
         <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = { this.onChange } />
         <br></br>

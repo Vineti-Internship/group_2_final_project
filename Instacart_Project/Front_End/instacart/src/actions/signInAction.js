@@ -1,21 +1,14 @@
 import { USER_SIGNIN } from './actionTypes';
+import { generalFetch } from '../helpers/generalFetch';
 
-export const signInUser = (postData) => dispatch => {
-console.log('action called')
+export const signInUser = (postData) => {
 
-    fetch('http://localhost:3000/sessions', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(postData)        
+return async dispatch => {
+    const userInfo = await generalFetch('sessions', 'POST', postData);
+    dispatch({
+        type: USER_SIGNIN,
+        payload: userInfo
     })
-    .then(res => res.json())
-    .then(userInfo =>
-        dispatch({
-            type: USER_SIGNIN,
-            payload: userInfo
-        })
-    )
+}
+    
 }
