@@ -30,8 +30,6 @@
   ],
   "devDependencies": {
     "@material-ui/core": "^3.6.1",
-    "@material-ui/icons": "*",
-    "eslint": "^5.9.0",
-    "eslint-plugin-react": "^7.11.1"
+    "@material-ui/icons": "*"
   }
 }

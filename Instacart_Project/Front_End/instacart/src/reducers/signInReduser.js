@@ -8,9 +8,13 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case USER_SIGNIN:    
-        return {
-            user: action.payload 
+        const user = action.payload;
+        localStorage.setItem("token", user.authentication_token);
+        state = {
+            ...state,
+            user
         };
+        return state;
     default:
         return state;
   }

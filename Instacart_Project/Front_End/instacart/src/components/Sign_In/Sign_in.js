@@ -2,7 +2,6 @@ import React from 'react';
 import './Sign_in.css';
 import { connect } from 'react-redux';
 import { signInUser } from '../../actions/signInAction';
-// import store from '../../store';
 
 class SignIn extends React.Component {
 
@@ -26,6 +25,24 @@ class SignIn extends React.Component {
         if(nextProps.logInResponse) {
             console.log(nextProps.logInResponse)
             // console.log(store.getState());
+
+
+
+
+
+
+            fetch('http://localhost:3000/users', {
+                method: 'GET',
+                headers: {
+                    'Authorization': nextProps.logInResponse.authentication_token,
+                    'Content-Type': 'application/json'
+                }
+            }).then((response) => response.json())
+            .then((data) => console.log(data))
+        
+        
+        
+        
         }
     }
 
@@ -60,4 +77,12 @@ const mapStateToProps = state => ({
     logInResponse: state.users.user
 })
 
-export default connect(mapStateToProps, { signInUser })(SignIn)
+const mapDispatchToProps =(dispatch) => {
+    return {
+        signInUser: (logInData) => {
+            dispatch(signInUser(logInData));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
