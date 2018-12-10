@@ -3,14 +3,8 @@ const defaultHeaders = {
     'Content-Type': 'application/json',
   };
   
-<<<<<<< HEAD
 //body='' for get requests
 export const generalFetch = async (url, method, body='', headers = defaultHeaders) => {
-=======
-//body={} for get requests
-export const generalFetch = async (url, method, body={}, headers = defaultHeaders) => {
-    
->>>>>>> 7c9e5d41016866c5cc9cfe11e910e8c090310362
     try {
         let response={};
         if(body){
