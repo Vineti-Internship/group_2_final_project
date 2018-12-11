@@ -1,7 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {getShopProducts} from '../../actions/shopActions';
 
 class CurrentShop extends React.PureComponent {
+    constructor(props){
+        super(props);
+    }
+    componentDidMount() {
+        this.props.getShopProducts(this.props.match.params.id);
+    }
     render(){
         return (
             <React.Fragment>
@@ -26,4 +33,12 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(CurrentShop);
+const mapDispatchToProps =  (dispatch) => {
+    return {
+        getShopProducts: (shopId) => {
+            dispatch(getShopProducts(shopId));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentShop);
