@@ -11,6 +11,7 @@ import Error from './components/Error/Error';
 import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Shops from './components/Stores/Stores';
+import CurrentShop from './components/CurrentShop/CurrentShop';
 // import Backet from './components/card/main'
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             {/* <Route path="/test/card" exact component={Backet} /> */}
             <Route path='/test'  component={Grid} />
             <PrivateRoute path='/shops' exact component={Shops}/>
+            <PrivateRoute path='/shops/:id' exact component={CurrentShop} />
             <Route component={Error}/>
           </Switch>
         </React.Fragment>
