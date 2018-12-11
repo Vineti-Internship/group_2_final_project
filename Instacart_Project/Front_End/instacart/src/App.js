@@ -10,7 +10,7 @@ import Home from './components/Home/Home';
 import Error from './components/Error/Error';
 import Header from './components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Stores from './components/Stores/Stores';
+import Shops from './components/Stores/Stores';
 // import Backet from './components/card/main'
 
 class App extends React.Component {
@@ -26,7 +26,7 @@ class App extends React.Component {
             {/* <Route path="/products"  component={()=><FoodPage data={{imageUrl:'https://res.cloudinary.com/sagacity/image/upload/c_crop,h_3456,w_5184,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/superdeluxe_owgtql.jpg',title:'Lorem',desc:"This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."}}/>}/> */}
             {/* <Route path="/test/card" exact component={Backet} /> */}
             <Route path='/test'  component={Grid} />
-            <PrivateRoute path='/stores' exact component={Stores}/>
+            <PrivateRoute path='/shops' exact component={Shops}/>
             <Route component={Error}/>
           </Switch>
         </React.Fragment>
