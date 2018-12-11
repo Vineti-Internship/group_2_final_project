@@ -1,3 +1,3 @@
 class StoreSerializer < ActiveModel::Serializer
-  attributes :id,:products
+  attributes :id,:name,:logo ,:description
 end

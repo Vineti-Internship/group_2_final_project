@@ -37,8 +37,8 @@ function Header(props) {
           <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
             Instacart
           </Typography>
-          <Link to='/signin'><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
-          <Link to='/signup'><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
+          <Button id='signInButton' color='inherit' href='/signin'>Sign In</Button>
+          <Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button>
         </Toolbar>    
   );
 }

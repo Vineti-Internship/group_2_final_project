@@ -10,7 +10,7 @@ class StoresController < ApplicationController
 
   # GET /stores/1
   def show
-    render json: @store
+    render json: @store.products
   end
 
   # POST /stores
@@ -46,6 +46,6 @@ class StoresController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def store_params
-      params.fetch(:store, {})
+        params.require(:store).permit(:name,:logo ,:price, :description)
     end
 end

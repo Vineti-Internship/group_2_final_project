@@ -65,7 +65,7 @@ const ImgMediaCard=(props)=> {
                     </CardContent>             
                 </CModal>
 
-                <Typography gutterBottom variant="subtitle2">{`Price:${props.data.price}AMD`}</Typography>
+                <Typography gutterBottom variant="subtitle2">{`Price: ${props.data.price} AMD`}</Typography>
                 {/* </Typography> */}
                 </CardContent>
             </CardActionArea>
