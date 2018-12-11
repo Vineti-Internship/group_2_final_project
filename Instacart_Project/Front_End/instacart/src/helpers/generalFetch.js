@@ -1,13 +1,13 @@
+import {isEmpty} from './isEmpty';
 const defaultHeaders = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-  };
+  };  
   
-//body='' for get requests
-export const generalFetch = async (url, method, body='', headers = defaultHeaders) => {
+export const generalFetch = async (url, method, body={}, headers = defaultHeaders) => {
     try {
         let response={};
-        if(body){
+        if(!isEmpty(body)){
             response = await fetch(`http://localhost:3000/${url}`,{
                 method,
                 body: JSON.stringify(body),

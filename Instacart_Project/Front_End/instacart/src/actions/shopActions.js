@@ -1,12 +1,6 @@
 import {GET_SHOPS, GET_SHOP_PRODUCTS} from './actionTypes';
 import { generalFetch } from '../helpers/generalFetch';
 
-const headers = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': localStorage.getItem('token')
-  };
-
 export const getShops = () => {
     return async (dispatch) => {
         const shops = await generalFetch('shops', 'GET', {}, headers);

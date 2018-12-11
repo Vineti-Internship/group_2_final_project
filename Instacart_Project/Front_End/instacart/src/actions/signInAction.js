@@ -10,3 +10,7 @@ export const signInUser = (postData) => {
         });
     }
 }
+
+export const signOutUser = () => {
+    localStorage.removeItem('user');
+}
