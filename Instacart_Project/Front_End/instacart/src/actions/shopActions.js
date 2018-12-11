@@ -3,7 +3,7 @@ import { generalFetch } from '../helpers/generalFetch';
 
 export const getShops = () => {
     return async (dispatch) => {
-        const shops = await generalFetch('shops', 'GET', {});
+        const shops = await generalFetch('stores', 'GET', {});
         dispatch({
             type: GET_SHOPS,
             payload: shops
@@ -13,7 +13,7 @@ export const getShops = () => {
 
 export const getShopProducts = (shopId) => {
     return async (dispatch) => {
-        const products = await generalFetch(`shops/${shopId}`, 'GET', {});
+        const products = await generalFetch(`stores/${shopId}`, 'GET', {});
         dispatch({
             type: GET_SHOP_PRODUCTS,
             payload: products

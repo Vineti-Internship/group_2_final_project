@@ -21,7 +21,6 @@ export const generalFetch = async (url, method, body={}, headers = defaultHeader
             });            
         }
         const data = await response.json();
-        // console.log(data);
         return data;
     } catch(e){
         console.log('Request failed', e);

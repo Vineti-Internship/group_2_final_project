@@ -1,7 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {getShops} from '../../actions/shopActions';
-
+import Grid from '@material-ui/core/Grid';
+import  Single  from './singleStore';
+import  SGrid  from '../food/gridF';
+import Typography from '@material-ui/core/Typography';
+ 
 class Shops extends React.PureComponent {
     constructor(props){
         super(props);
@@ -9,20 +13,21 @@ class Shops extends React.PureComponent {
 
     componentDidMount() {
         this.props.getShops();
+        console.log(this.props.shops);
     }
     render(){
         return (
             <React.Fragment>
-                <h1>Our Shops</h1>
-                <ul>
-                    {this.props.shops.map((shop, index) => {
+                <Typography style={{marginBottom:25}} variant='h3'>Our Shops</Typography>
+                <SGrid>
+                    {this.props.shops.map((element) => {
                         return (
-                            <li key={index}>
-                                {shop.name}
-                            </li>
+                            <Grid item  key={element.id}>
+                               <Single data={{logo:element.logo,title:element.name,desc:element.description,index:element.id}}></Single>
+                            </Grid>                                           
                         )
                     })}
-                </ul>
+                </SGrid>
             </React.Fragment>
         )
     }
