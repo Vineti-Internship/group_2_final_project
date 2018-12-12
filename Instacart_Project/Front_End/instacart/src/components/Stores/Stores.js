@@ -13,20 +13,21 @@ class Shops extends React.PureComponent {
 
     componentDidMount() {
         this.props.getShops();
-        console.log(this.props.shops);
     }
     render(){
         return (
             <React.Fragment>
                 <Typography style={{marginBottom:25}} variant='h3'>Our Shops</Typography>
                 <SGrid>
-                    {this.props.shops.map((element) => {
+                    { ( this.props.shops)?
+                        this.props.shops.map((element) => {
                         return (
                             <Grid item  key={element.id}>
                                <Single data={{logo:element.logo,title:element.name,desc:element.description,index:element.id}}></Single>
                             </Grid>                                           
                         )
-                    })}
+                    }):<div className='loader'></div>
+                }
                 </SGrid>
             </React.Fragment>
         )

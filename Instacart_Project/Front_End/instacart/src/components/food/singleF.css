@@ -6,9 +6,6 @@
 }
 
 .RemoveStyle,.RemoveStyle div {
-    width: auto !important;
-    border: unset !important;
-    border-radius: unset !important;
     margin: unset !important;
     padding-bottom: unset !important;
     text-align: left !important;
@@ -23,8 +20,7 @@
     left: calc(50% - 4em);
     width: 6em;
     height: 6em;
-    border: 1.1em solid rgba(0, 0, 0, 0.2);
-    border-left: 1.1em solid #000000;
+    border-left: 0.2em solid #927272;
     border-radius: 50%;
     animation: load8 1.1s infinite linear;
 }

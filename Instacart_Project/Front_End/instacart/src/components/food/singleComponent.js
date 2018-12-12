@@ -12,10 +12,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import NInput from './numberInput'
 import CModal from './modal'
-// import Input from '@material-ui/core/Input';
-
-// import InputLabel from '@material-ui/core/InputLabel';
-
 
 const styles = {
   card: {
@@ -28,8 +24,9 @@ const styles = {
     backgroundSize:'cover'
   },
   fmedia:{
-    width:100,
-    height:'60vh'
+    maxWidth: 500,
+    minHeight:300,
+    maxHeight:'60vh',
   }
 };
 
@@ -47,8 +44,6 @@ const ImgMediaCard=(props)=> {
                 title="Contemplative Reptile"
                 />
                 <CardContent className='RemoveStyle'>
-                
-                {/* <Typography gutterBottom variant="h5" component="h2"> */}
                 <CModal   title={props.data.title} >
                     <Typography variant="h6" align='center' id="modal-title">
                         {props.data.title}
@@ -64,14 +59,11 @@ const ImgMediaCard=(props)=> {
                     </Typography>
                     </CardContent>             
                 </CModal>
-
                 <Typography gutterBottom variant="subtitle2">{`Price: ${props.data.price} AMD`}</Typography>
-                {/* </Typography> */}
                 </CardContent>
             </CardActionArea>
             <CardActions className='RemoveStyle marginB' >
                 <NInput />
-                {/* <Input  className='RemoveStyle' placeholder='Quantinity' type='number' value='1' /> */}
                 <Button size="small"  color="primary">
                     Add to Card
                 </Button>
