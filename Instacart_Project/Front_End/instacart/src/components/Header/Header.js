@@ -35,10 +35,10 @@ function Header(props) {
             <MenuIcon />
           </IconButton>
           <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
-            Instacart
+          <Link to="/" style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
           </Typography>
-          <Button id='signInButton' color='inherit' href='/signin'>Sign In</Button>
-          <Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button>
+          <Link to="/signin" style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
+          <Link to="/signup" style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
         </Toolbar>    
   );
 }

@@ -23,26 +23,7 @@ class SignIn extends React.Component {
 
     componentWillReceiveProps(nextProps){
         if(nextProps.logInResponse) {
-            console.log(nextProps.logInResponse)
-            // console.log(store.getState());
-
-
-
-
-
-
-            fetch('http://localhost:3000/users', {
-                method: 'GET',
-                headers: {
-                    'Authorization': nextProps.logInResponse.authentication_token,
-                    'Content-Type': 'application/json'
-                }
-            }).then((response) => response.json())
-            .then((data) => console.log(data))
-        
-        
-        
-        
+            console.log(nextProps.logInResponse);     
         }
     }
 
