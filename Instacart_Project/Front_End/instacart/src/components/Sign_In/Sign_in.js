@@ -2,6 +2,7 @@ import React from 'react';
 import './Sign_in.css';
 import { connect } from 'react-redux';
 import { signInUser } from '../../actions/signInAction';
+import { Redirect } from 'react-router-dom';
 
 class SignIn extends React.Component {
 
@@ -11,6 +12,7 @@ class SignIn extends React.Component {
         this.state = {
             email: '',
             password: '',
+            redirect: false,
         };
 
         this.handleSignIn = this.handleSignIn.bind(this);
@@ -23,7 +25,9 @@ class SignIn extends React.Component {
 
     UNSAFE_componentWillReceiveProps(nextProps){
         if(nextProps.logInResponse) {
-            console.log(nextProps.logInResponse);     
+            if(nextProps.logInResponse.id && nextProps.logInResponse.authentication_token) {
+                this.setRedirect();
+            }     
         }
     }
 
@@ -35,21 +39,32 @@ class SignIn extends React.Component {
 
         this.props.signInUser(logInData);
     }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true,
+        });
+    }
+
+    renderRedirect = () => {
+        if(this.state.redirect) {
+            return <Redirect to='/'/>;
+        }
+    }
     
     render() {
         return (
-      
+          <React.Fragment>
+            {this.renderRedirect()}
             <div className='con'>
                 <h1 id='h1'>Sign In</h1>
-                <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = {
-                    this.onChange } />
+                <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = { this.onChange } />
                 <br></br>
-                <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = {
-                    this.onChange } />
+                <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = { this.onChange } />
                 <br></br>
                 <input type='submit' value='Submit' onClick= {this.handleSignIn}/>
             </div>
-      
+          </React.Fragment>
         );
     }
 }
