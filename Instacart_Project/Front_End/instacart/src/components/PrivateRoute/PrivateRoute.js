@@ -7,6 +7,6 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
             ? <Component {...Component} {...props}/>
             : <Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
     )} />
-)
+);
 
 export default PrivateRoute;
