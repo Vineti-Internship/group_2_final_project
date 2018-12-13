@@ -78,7 +78,7 @@ export class SignUp extends React.Component {
             isValid = false;
             inputErrors.lastName = 'Must contain only letters and have size not more than 50 characters';
         }
-        if(!this.state.email || !this.state.email.match(/^[a-zA-Z0-9._-]+@[a-z.-]+\.[a-zA-Z]{2,6}$/) || this.state.email.length > 15){
+        if(!this.state.email || !this.state.email.match(/^[a-zA-Z0-9._-]+@[a-z.-]+\.[a-zA-Z]{2,6}$/) || this.state.email.length > 50){
             isValid = false;
             inputErrors.email = 'Invalid Email';
         }
