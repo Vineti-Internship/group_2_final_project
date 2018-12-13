@@ -86,10 +86,10 @@ export class SignUp extends React.Component {
             isValid = false;
             inputErrors.address = 'Invalid Address';
         }
-        if(!this.state.phone.match('^([+\d].*)\d$') || this.state.phone.length > 50 || this.state.phone.length < 8){
-            isValid = false;
-            inputErrors.phone = 'Length of phone number must be 8..50 and start with + sign';
-        }   
+        // if(!this.state.phone.match('^([+\d].*)\d$') || this.state.phone.length > 50 || this.state.phone.length < 8){
+        //     isValid = false;
+        //     inputErrors.phone = 'Length of phone number must be 8..50 and start with + sign';
+        // }   
         if(this.state.password.length < 6){
             isValid = false;
             inputErrors.password = 'Minimum length of password is 6 characters';
