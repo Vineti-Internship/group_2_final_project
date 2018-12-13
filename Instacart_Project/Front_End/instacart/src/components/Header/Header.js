@@ -25,22 +25,22 @@ const styles = {
 };
 
 
-const Header=(props) => {
+function Header(props) {
 
     const { classes } = props;
 
 
     return (     
         <Toolbar id='toolbar' className='con'>
-          <IconButton id='menuIcon' className={classes.menuButton} color='inherit' aria-label='Menu'>
-            <MenuIcon />
-          </IconButton>
-          <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
-            Instacart
-          </Typography>
-          <Button id='signInButton'><Link  to='/signin'>Sign In</Link> </Button>
-          <Button id='signUpButton' ><Link to='/signup'>Sign Up</Link></Button>
-          {(localStorage.hasOwnProperty('user'))? <Backet /> :null}
+            <IconButton id='menuIcon' className={classes.menuButton} color='inherit' aria-label='Menu'>
+                <MenuIcon />
+            </IconButton>
+            <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
+                <Link to='/' style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
+            </Typography>
+            <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
+            <Link to='/signup' style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
+            {(localStorage.hasOwnProperty('user'))? <Backet /> :null}
         </Toolbar>    
     );
 }
