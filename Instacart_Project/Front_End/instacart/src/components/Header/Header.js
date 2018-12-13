@@ -11,40 +11,40 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+    root: {
+        flexGrow: 1,
+    },
+    grow: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginLeft: -12,
+        marginRight: 20,
+    },
 };
 
 
 function Header(props) {
 
-  const { classes } = props;
+    const { classes } = props;
 
 
-  return (     
+    return (     
         <Toolbar id='toolbar' className='con'>
-          <IconButton id='menuIcon' className={classes.menuButton} color='inherit' aria-label='Menu'>
-            <MenuIcon />
-          </IconButton>
-          <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
-          <Link to="/" style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
-          </Typography>
-          <Link to="/signin" style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
-          <Link to="/signup" style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
+            <IconButton id='menuIcon' className={classes.menuButton} color='inherit' aria-label='Menu'>
+                <MenuIcon />
+            </IconButton>
+            <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
+                <Link to="/" style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
+            </Typography>
+            <Link to="/signin" style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
+            <Link to="/signup" style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
         </Toolbar>    
-  );
+    );
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Header);
