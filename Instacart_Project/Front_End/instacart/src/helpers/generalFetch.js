@@ -20,10 +20,13 @@ export const generalFetch = async (url, method, body={}, headers = defaultHeader
                 headers
             });            
         }
-        const data = await response.json();
-        return data;
+        if(response.ok){
+            const data = await response.json();
+            return data;
+        } else {
+            return false;
+        }
     } catch(e){
         console.log('Request failed', e);
-        return false;
     }
   }
