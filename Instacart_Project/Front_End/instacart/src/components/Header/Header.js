@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Backet from '../card/main';
 
 
 const styles = {
@@ -35,10 +36,11 @@ function Header(props) {
                 <MenuIcon />
             </IconButton>
             <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
-                <Link to="/" style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
+                <Link to='/' style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
             </Typography>
-            <Link to="/signin" style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
-            <Link to="/signup" style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
+            <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
+            <Link to='/signup' style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
+            {(localStorage.hasOwnProperty('user'))? <Backet /> :null}
         </Toolbar>    
     );
 }

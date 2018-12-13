@@ -1,8 +1,9 @@
 #toolbar {
-    width: 95%;
+    width: auto;
     height: 20px;
-    margin-top: 5px;
+    margin: 0;
     background-color: rgb(146, 114, 114);
+    border-radius: 0px;
 }
 
 html, body {
@@ -13,7 +14,7 @@ html, body {
     overflow-x: hidden
 }
 
-#menuIcon, #h6, #signInButton, #signUpButton {
+#menuIcon, #h6, #signInButton, #signUpButton, div {
     margin-top:15px;
 }
 

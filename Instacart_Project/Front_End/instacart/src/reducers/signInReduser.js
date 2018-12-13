@@ -9,11 +9,13 @@ export default function(state = initialState, action) {
   switch(action.type) {
     case USER_SIGNIN:    
         const user = action.payload;
-        localStorage.setItem('user', user);
-        state = {
-            ...state,
-            user
-        };
+        if(user){
+            localStorage.setItem('user', user);
+            state = {
+                ...state,
+                user
+            };
+        }
         return state;
     default:
         return state;

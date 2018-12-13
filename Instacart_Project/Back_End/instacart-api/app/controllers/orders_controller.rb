@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1
   def show
-    render json: @order
+    render json: Order.where(["user_id = ?",params[:id]]).last
   end
 
   # POST /orders
@@ -46,6 +46,7 @@ class OrdersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def order_params
-      params.require(:order).permit(:user_id,:pCost).reverse_merge({pCost:0}})
+      params.require(:order).permit(:user_id,:pCost).reverse_merge({pCost:0})
     end
+
 end
