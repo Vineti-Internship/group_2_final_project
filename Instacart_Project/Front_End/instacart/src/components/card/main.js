@@ -25,15 +25,16 @@ class Backet extends React.PureComponent {
                     Your Current order
                 </Typography>
                 {( this.props.currentDbOrder)?
-                        this.props.currentDbOrder.products.map((element) => {
-                        return (
-                            <a>
-                                {element.Name}
-                            </a>
-                            // <Grid item  key={element.id}>
-                            //     <Single data={{price:element.price,imageUrl:element.imageUrl,title:element.Name,desc: element.description}}/>
-                            // </Grid>
-                        )
+                        this.props.currentDbOrder.map((element,index)=>{
+                            return (
+                                <Product title={element.product.Name} key={index}
+                                thumbnailUrl={element.product.imageUrl}
+                                quantinity={element.quantinity}
+                                price={element.product.price}
+                                store={element.product.sName}
+                                />
+                            )
+
                         }):null
                 }
                 {/* <Product title="Standard gyros Baguetta"
@@ -42,32 +43,16 @@ class Backet extends React.PureComponent {
                 price={1100}
                 store="Mr. Gyros"
                 />
-                <Product title="Standard gyros Baguetta"
-                thumbnailUrl='https://www.menu.am/resources/default/img/restaurant_products/small/1479058039-1242.jpeg'
-                quantinity={1}
-                price={1100}
-                store="Mr. Gyros"
-                />
-                <Product title="Standard gyros Baguetta"
-                thumbnailUrl='https://www.menu.am/resources/default/img/restaurant_products/small/1479058039-1242.jpeg'
-                quantinity={1}
-                price={1100}
-                store="Mr. Gyros"
-                />
-                <Product title="Standard gyros Baguetta"
-                thumbnailUrl='https://www.menu.am/resources/default/img/restaurant_products/small/1479058039-1242.jpeg'
-                quantinity={1}
-                price={1100}
-                store="Mr. Gyros"
-                />                                             */}
+                                                  */}
             </Grid>
             </PopoverB>
         );
     }
 }
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        currentDbOrder: state.currentDbOrder
+        currentDbOrder: state.orders
     }
 }
 const mapDispatchToProps =  (dispatch) => {

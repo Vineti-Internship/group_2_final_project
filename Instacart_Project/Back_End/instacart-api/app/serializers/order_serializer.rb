@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :pCost
+  attributes :id, :pCost,:user_id
 #   ,:user_id
   has_many :products
 #   def user_id

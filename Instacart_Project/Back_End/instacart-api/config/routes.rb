@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     #     namespace :v1 do
     resources :users
     resources :sessions, only: [:create, :destroy]
+    get '/orders_products/adv/:order_id', to: 'orders_products#cShow'
     #     end
     # end
   # devise_for :users

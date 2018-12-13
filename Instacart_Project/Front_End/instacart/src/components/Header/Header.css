@@ -11,10 +11,10 @@ html, body {
     padding:0px;
     width: 100%;
     height:100%;
-    overflow-x: hidden
+    overflow-x: hidden;
 }
 
-#menuIcon, #h6, #signInButton, #signUpButton, div {
+#menuIcon, #h6, #signInButton, #signUpButton {
     margin-top:15px;
 }
 

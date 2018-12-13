@@ -68,7 +68,7 @@ MediaControlCard.propTypes = {
     title: PropTypes.string.isRequired,
     store: PropTypes.string.isRequired,
     thumbnailUrl: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
     quantinity: PropTypes.number.isRequired,
 
 };

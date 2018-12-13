@@ -4,7 +4,15 @@
 .marginB{
     margin-bottom: 25px !important;
 }
-
+/* body{
+    overflow-y:hidden
+} */
+.wrap{
+    /* overflow-y:auto; */
+    padding-top:50px;
+    height: inherit;
+    max-height:100%;
+}
 .RemoveStyle,.RemoveStyle div {
     margin: unset !important;
     padding-bottom: unset !important;

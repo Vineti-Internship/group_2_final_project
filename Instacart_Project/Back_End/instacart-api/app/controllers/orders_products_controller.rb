@@ -13,6 +13,9 @@ class OrdersProductsController < ApplicationController
     render json: @orders_product
   end
 
+  def cShow
+    render json: OrdersProduct.where("order_id = ?",params[:order_id])
+  end
   # POST /orders_products
   def create
     @orders_product = OrdersProduct.new(orders_product_params)

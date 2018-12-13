@@ -6,15 +6,12 @@ import Grid from '@material-ui/core/Grid';
 import  Single  from '../food/singleComponent';
 import  SGrid  from '../food/gridF';
 class CurrentShop extends React.PureComponent {
-    constructor(props){
-        super(props);
-    }
     componentDidMount() {
         this.props.getShopProducts(this.props.match.params.id);
     }
     render(){
         return (
-            <React.Fragment>
+            <div className='wrap'>
                 <Typography style={{marginBottom:25}} variant='h3'>
                   { (this.props.currentShopProducts[0])? this.props.currentShopProducts[0].sName :'Welcome'}
                 </Typography>
@@ -29,7 +26,7 @@ class CurrentShop extends React.PureComponent {
                         }):<div className='loader'></div>
                 }
                 </SGrid>
-            </React.Fragment>
+            </div>
         )
     }
 }

@@ -7,16 +7,12 @@ import  SGrid  from '../food/gridF';
 import Typography from '@material-ui/core/Typography';
  
 class Shops extends React.PureComponent {
-    constructor(props){
-        super(props);
-    }
-
     componentDidMount() {
         this.props.getShops();
     }
     render(){
         return (
-            <React.Fragment>
+            <div className='wrap'>
                 <Typography style={{marginBottom:25}} variant='h3'>Our Shops</Typography>
                 <SGrid>
                     { ( this.props.shops)?
@@ -29,7 +25,7 @@ class Shops extends React.PureComponent {
                     }):<div className='loader'></div>
                 }
                 </SGrid>
-            </React.Fragment>
+            </div>
         )
     }
 }
