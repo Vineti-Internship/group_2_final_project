@@ -46,7 +46,6 @@ class ProductsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      defaults = { quantinity: 1 }
-      params.require(:product).permit(:Name,:quantinity ,:price, :store_id, :imageUrl, :description).reverse_merge(defaults)
+      params.require(:product).permit(:Name ,:price, :store_id,:imageUrl, :description).reverse_merge(defaults)
     end
 end
