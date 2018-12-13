@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Backet from '../card/main';
 
 
 const styles = {
@@ -24,7 +25,7 @@ const styles = {
 };
 
 
-function Header(props) {
+const Header=(props) => {
 
   const { classes } = props;
 
@@ -37,8 +38,9 @@ function Header(props) {
           <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
             Instacart
           </Typography>
-          <Button id='signInButton' color='inherit' href='/signin'>Sign In</Button>
-          <Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button>
+          <Button id='signInButton'><Link  to='/signin'>Sign In</Link> </Button>
+          <Button id='signUpButton' ><Link to='/signup'>Sign Up</Link></Button>
+          {(localStorage.hasOwnProperty('user'))? <Backet /> :null}
         </Toolbar>    
   );
 }
