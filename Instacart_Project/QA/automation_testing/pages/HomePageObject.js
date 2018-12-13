@@ -17,5 +17,8 @@ module.exports['default'] = class HomePageObject extends BasePageObject{
     getHeaderText(){
         return browser.element(this.selector.signUpPageText).getText();
     }
+    getHomeText(){
+        return browser.element(this.selector.homePageText).getText();
+    }
 
 }

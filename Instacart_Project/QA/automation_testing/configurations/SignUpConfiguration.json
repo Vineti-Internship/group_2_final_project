@@ -2,10 +2,18 @@
     "header": "//h6/a",
     "emailField": "//*[@name = 'email']",
     "passField": "//*[@name='password']",
-    "passConfirmField": "//*[@name='password']",
+    "passConfirmField": "//*[@name='confirmPassword']",
     "firstNameField": "//*[@name = 'firstName']",
     "lastNameField": "//*[@name = 'lastName']",
     "addressField": "//*[@name = 'address']",
     "phoneNumberField": "//*[@name = 'phone']",
-    "signUpPageText": "//h1"
+    "signUpPageText": "//h1",
+    "signUpSubmit": "//input[@type = 'submit']",
+    "signUpEmailError": "//p[@class = 'error'][3]",
+    "signUpFirstNameError": "//p[@class = 'error'][1]",
+    "signUpLastNameError": "//p[@class = 'error'][2]",
+    "signUpAddressError": "//p[@class = 'error'][4]",
+    "signUpPhoneError": "//p[@class = 'error'][5]",
+    "signUpPassError": "//p[@class = 'error'][6]",
+    "signUpConfPassError": "//p[@class = 'error'][7]"
 }
