@@ -1,0 +1,11 @@
+{
+    "header": "//h6/a",
+    "emailField": "//*[@name = 'email']",
+    "passField": "//*[@name='password']",
+    "passConfirmField": "//*[@name='password']",
+    "firstNameField": "//*[@name = 'firstName']",
+    "lastNameField": "//*[@name = 'lastName']",
+    "addressField": "//*[@name = 'address']",
+    "phoneNumberField": "//*[@name = 'phone']",
+    "signUpPageText": "//h1"
+}
