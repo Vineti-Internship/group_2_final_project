@@ -1,7 +1,8 @@
 import { USER_SIGNIN } from '../actions/actionTypes'
 
 const initialState = {
-    user: {}
+    user: {},
+    errorMessage: ''
 } 
 
 
@@ -14,6 +15,11 @@ export default function(state = initialState, action) {
             state = {
                 ...state,
                 user
+            };
+        } else {
+            state = {
+                ...state,
+                errorMessage: "Wrong email or password"
             };
         }
         return state;

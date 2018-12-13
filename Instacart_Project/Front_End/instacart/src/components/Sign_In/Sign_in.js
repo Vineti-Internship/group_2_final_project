@@ -63,6 +63,7 @@ class SignIn extends React.Component {
                 <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = { this.onChange } />
                 <br></br>
                 <input type='submit' value='Submit' onClick= {this.handleSignIn}/>
+                <p style={{color: "red"}}>{this.props.errorMessage}</p>
             </div>
           </React.Fragment>
         );
@@ -70,7 +71,8 @@ class SignIn extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    logInResponse: state.users.user
+    logInResponse: state.users.user,
+    errorMessage: state.users.errorMessage
 });
 
 const mapDispatchToProps =(dispatch) => {
