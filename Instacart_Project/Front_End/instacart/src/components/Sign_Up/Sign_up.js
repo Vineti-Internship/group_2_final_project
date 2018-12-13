@@ -70,29 +70,29 @@ export class SignUp extends React.Component {
         let isValid = true;
         let inputErrors = {};
         
-        if(!this.state.firstName || !this.state.firstName.match('^[A-Za-z\s\-]+$') ||  this.state.firstName.length > 50){
+        if(!this.state.firstName || !this.state.firstName.match(/^[A-Za-z\s\-]+$/) ||  this.state.firstName.length > 50){
             isValid = false;
             inputErrors.firstName = 'Must contain only letters and have size not more than 50 characters';
         }
-        if(!this.state.lastName || !this.state.lastName.match('^[A-Za-z]+$') || this.state.lastName.length > 50){
+        if(!this.state.lastName || !this.state.lastName.match(/^[A-Za-z\s\-]+$/) || this.state.lastName.length > 50){
             isValid = false;
             inputErrors.lastName = 'Must contain only letters and have size not more than 50 characters';
         }
-        if(!this.state.email || !this.state.email.match('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$')){
+        if(!this.state.email || !this.state.email.match(/^[a-zA-Z0-9._-]+@[a-z.-]+\.[a-zA-Z]{2,6}$/) || this.state.email.length > 15){
             isValid = false;
             inputErrors.email = 'Invalid Email';
         }
-        if(!this.state.address){
+        if(!this.state.address || this.state.address.length > 50){
             isValid = false;
             inputErrors.address = 'Invalid Address';
         }
-        // if(!this.state.phone.match('^([+\d].*)\d$') || this.state.phone.length > 50 || this.state.phone.length < 8){
-        //     isValid = false;
-        //     inputErrors.phone = 'Length of phone number must be 8..50 and start with + sign';
-        // }   
-        if(this.state.password.length < 6){
+        if(!this.state.phone.match(/^([+]\d*)\d$/) || this.state.phone.length > 50 || this.state.phone.length < 8){
             isValid = false;
-            inputErrors.password = 'Minimum length of password is 6 characters';
+            inputErrors.phone = 'Length of phone number must be 8..50 and start with + sign';
+        }   
+        if(this.state.password.length < 6 || this.state.password.length > 50){
+            isValid = false;
+            inputErrors.password = 'Minimum length of password is 6 characters and maximum is 50';
         }
         if(this.state.password !== this.state.confirmPassword || this.state.confirmPassword.length < 6){
             isValid = false;
