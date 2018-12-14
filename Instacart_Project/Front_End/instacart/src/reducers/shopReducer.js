@@ -1,8 +1,9 @@
-import { GET_SHOPS, GET_SHOP_PRODUCTS } from '../actions/actionTypes'
+import { GET_SHOPS, GET_SHOP_PRODUCTS, GET_COURIERS } from '../actions/actionTypes'
 
 const initialState = {
     shops: [],
-    currentShopProducts: []
+    currentShopProducts: [],
+    couriers: []
 } 
 
 
@@ -22,6 +23,13 @@ export default function(state = initialState, action) {
             currentShopProducts
         };
         return state;
+    case GET_COURIERS:
+        const couriers = action.payload
+        state = {
+            ...state,
+            couriers
+        };
+        return state;    
     default:
         return state;
   }
