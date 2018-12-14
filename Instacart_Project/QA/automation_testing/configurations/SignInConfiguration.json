@@ -1,3 +1,8 @@
 {
-    
+    "signInPageText": "//h1",
+    "emailField": "//*[@name = 'email']",
+    "passField": "//*[@name='password']",
+    "signInSubmit": "//input[@type = 'submit']",
+    "signOutText": "//button[@id = 'signInButton']/span",
+    "errorMessege": "//div[@class = 'con']/p"
 }
