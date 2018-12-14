@@ -40,7 +40,7 @@ function Header(props) {
             </Typography>
             <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
             <Link to='/signup' style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
-            {(localStorage.hasOwnProperty('user'))? <Backet /> :null}
+            {(localStorage.getItem('user'))? <Backet /> :null}
         </Toolbar>    
     );
 }

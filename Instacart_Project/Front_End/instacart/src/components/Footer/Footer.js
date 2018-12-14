@@ -5,7 +5,7 @@ const Footer = () => {
     return (
      
     <footer>
-    <div class='left-block'>
+    <div className='left-block'>
       <div className='location'>
         <h2>Our Location</h2>
         <h3>Yerevan, Armenia</h3>
