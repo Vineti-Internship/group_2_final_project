@@ -1,4 +1,4 @@
-import { USER_SIGNIN } from '../actions/actionTypes'
+import { USER_SIGNIN, USER_SIGNOUT } from '../actions/actionTypes'
 
 const initialState = {
     user: {},
@@ -23,6 +23,13 @@ export default function(state = initialState, action) {
             };
         }
         return state;
+    case USER_SIGNOUT:
+        state = {
+            ...state,
+            user: {}
+        };
+        localStorage.removeItem('user');
+        return state
     default:
         return state;
   }
