@@ -12,10 +12,7 @@ class OrdersProductsController < ApplicationController
   def show
     render json: @orders_product
   end
-
-  def cShow
-    render json: OrdersProduct.where("order_id = ?",params[:order_id])
-  end
+  
   # POST /orders_products
   def create
     @orders_product = OrdersProduct.new(orders_product_params)
@@ -48,7 +45,8 @@ class OrdersProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_orders_product
-      @orders_product = OrdersProduct.find(params[:id])
+      @ord= Order.where(["user_id = ?",params[:id]]).last
+      @orders_product = OrdersProduct.where("order_id = ?",@ord.id)
     end
 
     # Only allow a trusted parameter "white list" through.

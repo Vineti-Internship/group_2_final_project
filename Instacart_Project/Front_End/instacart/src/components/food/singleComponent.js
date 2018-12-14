@@ -72,7 +72,6 @@ const ImgMediaCard=(props)=> {
 
 ImgMediaCard.propTypes = {
   classes: PropTypes.object.isRequired,
-  handleOnClick: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(ImgMediaCard);

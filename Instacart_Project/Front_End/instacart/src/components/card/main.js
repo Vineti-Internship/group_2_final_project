@@ -7,8 +7,9 @@ import {connect} from 'react-redux';
 import {getOrder} from '../../actions/addProduct';
 
 class Backet extends React.PureComponent {
-    componentDidMount() {
-        this.props.getOrder(this.props.uId);
+    async componentDidMount() {
+        const a = await JSON.parse(localStorage.getItem('user'));
+        this.props.getOrder(a.id);           
         //just constant now ,read from localStorage 
     }
     render() {
@@ -43,10 +44,8 @@ class Backet extends React.PureComponent {
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         currentDbOrder: state.orders,
-        uId: state.users.user.id
     }
 }
 const mapDispatchToProps =  (dispatch) => {

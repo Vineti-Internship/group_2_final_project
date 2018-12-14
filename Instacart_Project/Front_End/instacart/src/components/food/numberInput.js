@@ -25,7 +25,6 @@ class nInput extends React.PureComponent{
         this.props.addProduct({
             "order_id":this.props.oId,
             "product_id":this.props.pId,
-            "user":this.props.uId,
             "quantinity": q
         });
     }
@@ -41,10 +40,8 @@ class nInput extends React.PureComponent{
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state);
     return {     
         oId: (state.orders[0])?state.orders[0].order.id:null,
-        uId:state.users.user.id
     }
 }
 const mapDispatchToProps = (dispatch) => {

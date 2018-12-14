@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
     case USER_SIGNIN:    
         const user = action.payload;
         if(user){
-            localStorage.setItem('user', user);
+            localStorage.setItem('user', JSON.stringify(user));
             state = {
                 ...state,
                 user
