@@ -2,5 +2,6 @@
     "header": "//h6/a",
     "homePageText":"//h1",
     "signUp" : "//a[@id = 'signUpButton']/span",
-    "signIn" : "//a[@id = 'signInButton']/span"
+    "signIn" : "//button[@id = 'signInButton']/span",
+    "signOut" : "//button[@id = 'signInButton']/span"
 }

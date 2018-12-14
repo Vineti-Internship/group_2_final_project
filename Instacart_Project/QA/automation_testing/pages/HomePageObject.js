@@ -16,7 +16,9 @@ module.exports['default'] = class HomePageObject extends BasePageObject{
     clickOnSignInButton(){
         this.click(this.selector.signIn);
     }
-
+    clickOnSignOutButton(){
+        this.click(this.selector.signOut);
+    }
     getHeaderText(){
         return browser.element(this.selector.signUpPageText).getText();
     }

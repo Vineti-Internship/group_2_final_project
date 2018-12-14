@@ -11,7 +11,7 @@ describe('SignUp functionality', () => {
             homePageObject.navigateToInstacart();
             homePageObject.clickOnSignUpButton();
             const signUpText = signUpPageObject.getHeaderText();
-            assert.equal(signUpText, 'Sign Up');
+            assert.equal(signUpText, 'SIGN UP');
         })
         it('Check that create account with email "user@email.am"', () =>{
             signUpPageObject.setFirstName();
@@ -23,7 +23,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword();
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
         it('Check that create account with email “us_us@email.am”', () =>{
             homePageObject.clickOnSignUpButton();
@@ -36,7 +36,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword();
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
         it('Check that create account with email “us-us@email.am”', () =>{
             homePageObject.clickOnSignUpButton();
@@ -49,7 +49,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword();
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
         it('Check that create account with email “u1234@email.am”', () =>{
             homePageObject.clickOnSignUpButton();
@@ -62,7 +62,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword();
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
 
     })
@@ -78,7 +78,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword('222222');
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
         it('Check that create account with password “utyuyu”', () =>{
             homePageObject.clickOnSignUpButton();
@@ -91,7 +91,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword('utyuyu');
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
         it('Check that create account with password “22eeee”', () =>{
             homePageObject.clickOnSignUpButton();
@@ -104,7 +104,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword('22eeee');
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
         it('Check that create account with password “admin”', () =>{
             homePageObject.clickOnSignUpButton();
@@ -117,7 +117,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword('"admin"');
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
     })
     describe('First Name and Last Name fields positive tests', () =>{
@@ -132,7 +132,7 @@ describe('SignUp functionality', () => {
             signUpPageObject.setConfirmPassword();
             signUpPageObject.clickOnSignUpButton(); 
             const homeText = homePageObject.getHomeText();
-            assert.equal(homeText, 'Home');
+            assert.equal(homeText, 'Time to eat ...');
         })
     })
     
@@ -310,7 +310,7 @@ describe('SignUp functionality', () => {
             let errorMessege = signUpPageObject.getPhoneErrorMessege();
             assert.equal(errorMessege, 'Length of phone number must be 8..50 and start with + sign');
         })
-        it('Phone Number without + sign', () =>{
+        it('Phone Number with digits and letters', () =>{
             signUpPageObject.setFirstName();
             signUpPageObject.setLastName();
             signUpPageObject.setEmail();
