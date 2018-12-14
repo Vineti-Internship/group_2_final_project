@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 
-export class SignUp extends React.Component {
+export class SignUp extends React.PureComponent {
 
     constructor(){
         super();

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signInUser } from '../../actions/signInAction';
 import { Redirect } from 'react-router-dom';
 
-class SignIn extends React.Component {
+class SignIn extends React.PureComponent {
 
     constructor(props){
         super(props);
@@ -21,6 +21,12 @@ class SignIn extends React.Component {
 
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
+    }
+
+    componentDidMount() {
+        if(localStorage.getItem('user')){
+            this.setRedirect();
+        }
     }
 
     UNSAFE_componentWillReceiveProps(nextProps){
@@ -48,7 +54,7 @@ class SignIn extends React.Component {
 
     renderRedirect = () => {
         if(this.state.redirect) {
-            return <Redirect to='/'/>;
+            return <Redirect to='/shops'/>;
         }
     }
     

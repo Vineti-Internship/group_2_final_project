@@ -1,4 +1,4 @@
-import { USER_SIGNIN } from './actionTypes';
+import { USER_SIGNIN, USER_SIGNOUT } from './actionTypes';
 import { generalFetch } from '../helpers/generalFetch';
 
 export const signInUser = (postData) => {
@@ -12,5 +12,7 @@ export const signInUser = (postData) => {
 }
 
 export const signOutUser = () => {
-    localStorage.removeItem('user');
+    return {
+        type: USER_SIGNOUT
+    }
 }

@@ -24,7 +24,7 @@ const Home = (props) => {
       <div className='picture'>
         <h1 className='first'>Time to eat ...</h1>
       </div>
-      <p>To browse more please <Link to='/signin' style={{textDecoration: 'none', color: 'dark blue'}}>Sign In</Link></p>
+      {localStorage.getItem('user') ? null : <p>To browse more please <Link to='/signin' style={{textDecoration: 'none', color: 'dark blue'}}>Sign In</Link></p>}
         <Grid style={{margin: '30px 0px', width: '100%'}} container spacing={24}>
         <Grid item xs>
           <Paper className={classes.paper}>
