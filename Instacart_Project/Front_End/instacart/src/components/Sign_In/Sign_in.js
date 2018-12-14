@@ -23,6 +23,12 @@ class SignIn extends React.PureComponent {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    componentDidMount() {
+        if(localStorage.getItem('user')){
+            this.setRedirect();
+        }
+    }
+
     UNSAFE_componentWillReceiveProps(nextProps){
         if(nextProps.logInResponse) {
             if(nextProps.logInResponse.id && nextProps.logInResponse.authentication_token) {
