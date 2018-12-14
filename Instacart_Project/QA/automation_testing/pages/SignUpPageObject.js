@@ -33,43 +33,43 @@ module.exports['default'] = class SignUpPageObject extends BasePageObject{
     getPhoneErrorMessege(){
         return browser.element(this.selector.signUpPhoneError).getText();
     }
-    setEmail(email){
+    setEmail(email = 'info@info.com'){
         this.setValue(this.selector.emailField, email);
     }
     setLongEmail(){
         this.setValue(this.selector.emailField, "infodacaddddddddcccccccccccccccccccaddddddddddddddddd1111111111111111111111111115333333333333333333333333333333333333333333333333338888888888888888888888888888888888888888888888877777777777777777777777777777777777777777@email.am");
     }
-    setPassword(password){
+    setPassword(password = 'zzzzzz'){
         this.setValue(this.selector.passField, password);
     }
     setLongPassword(){
         this.setValue(this.selector.passField, 'infodacaddddddddcccccccccccccccccccaddddddddddddddddd1111111111111111111111111115333333333333333333333333333333333333333333333333338888888888888888888888888888888888888888888888877777777777777777777777777777777777777777');
     }
-    setConfirmPassword(confirmPassword){
+    setConfirmPassword(confirmPassword = 'zzzzzz'){
         this.setValue(this.selector.passConfirmField, confirmPassword);
     }
     setLongConfirmPassword(){
         this.setValue(this.selector.passConfirmField, 'infodacaddddddddcccccccccccccccccccaddddddddddddddddd1111111111111111111111111115333333333333333333333333333333333333333333333333338888888888888888888888888888888888888888888888877777777777777777777777777777777777777777');
     }
-    setFirstName(firstName){
+    setFirstName(firstName = 'John'){
         this.setValue(this.selector.firstNameField, firstName);
     }
     setLongFirstName(){
         this.setValue(this.selector.firstNameField, 'Ajknsdkdncksdcisudcbidusbciubciudbciudbiudbcdbcuidbcdbciudbciudwhodcjiwjcwdjciwjocjdicjwdoicjwoicjdoicjdicjdwcjowdicjdoicjodwijcoijcoiwdjcowdjcoidwjcoidwjcoidjcoidjcwdoicjoidwcjoidjcoiwdjcowjcoiwdjciwdjcowdjcoiwdjcow');
     }
-    setLastName(lastName){
+    setLastName(lastName = 'Smith'){
         this.setValue(this.selector.lastNameField, lastName);
     }
     setLongLastName(){
         this.setValue(this.selector.lastNameField, 'Ajknsdkdncksdcisudcbidusbciubciudbciudbiudbcdbcuidbcdbciudbciudwhodcjiwjcwdjciwjocjdicjwdoicjwoicjdoicjdicjdwcjowdicjdoicjodwijcoijcoiwdjcowdjcoidwjcoidwjcoidjcoidjcwdoicjoidwcjoidjcoiwdjcowjcoiwdjciwdjcowdjcoiwdjcow');
     }
-    setAddress(address){
-        this.setValue(this.selector.addressField, address);
+    setAddress(){
+        this.setValue(this.selector.addressField, '445 Mount Eden Road, Mount Eden, Auckland');
     }
     setLongAddress(){
         this.setValue(this.selector.addressField, 'dskjcnskjcnkjsncljkj skjcnsdkjcnkjsdcksjdnckjsdnckjsnckjnsdkj dskjcnsdkjcnksjdncksdnckjsdcnjk sdjcnsjdkcnkjsndcjskckjsndc skjcnsdkjcnksjdcnkjsdnc sdkcnsdkjcndskjcnksjdc sdkjcnsdkjcnkjsncsdkjnckjsnckjsdnckjsndkjcsd cdcnd');
     }
-    setPhoneNumber(phone){
+    setPhoneNumber(phone = '+37494949494'){
         this.setValue(this.selector.phoneNumberField, phone);
     }
     setLongPhoneNumber(){
