@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signInUser } from '../../actions/signInAction';
 import { Redirect } from 'react-router-dom';
 
-class SignIn extends React.Component {
+class SignIn extends React.PureComponent {
 
     constructor(props){
         super(props);

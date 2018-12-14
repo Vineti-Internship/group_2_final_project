@@ -38,7 +38,7 @@ function Header(props) {
             <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
                 <Link to='/' style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
             </Typography>
-            <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' href='/signin'>Sign In</Button></Link>
+            {(localStorage.hasOwnProperty('user'))? <Link to='/' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit'>Sign Out</Button></Link> : <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit'>Sign In</Button></Link> }
             <Link to='/signup' style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
             {(localStorage.hasOwnProperty('user'))? <Backet /> :null}
         </Toolbar>    
