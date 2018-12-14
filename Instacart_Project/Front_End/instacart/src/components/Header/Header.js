@@ -33,6 +33,7 @@ class Header extends React.PureComponent {
     }
     handleSignOut = () => {
         this.props.signOutUser();
+        this.forceUpdate();
     }
     render(){
         const { classes } = this.props;
@@ -44,9 +45,9 @@ class Header extends React.PureComponent {
                 <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
                     <Link to='/' style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
                 </Typography>
-                {(localStorage.getItem('user')) ? <Link to='/' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit' onClick={this.handleSignOut}>Sign Out</Button></Link> : <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit'>Sign In</Button></Link> }
+                {(localStorage.getItem('user')) ? <Button id='signInButton' color='inherit' onClick={this.handleSignOut}>Sign Out</Button>: <Link to='/signin' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit'>Sign In</Button></Link> }
                 <Link to='/signup' style={{textDecoration: 'none', color: 'black'}}><Button id='signUpButton' color='inherit' href='/signup'>Sign Up</Button></Link>
-                {(localStorage.getItem('user'))? <Backet /> :null}
+                {(localStorage.getItem('user')) ? <Backet /> :null}
             </Toolbar>    
         );
     }
