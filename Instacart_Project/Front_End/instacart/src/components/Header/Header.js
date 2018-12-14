@@ -8,9 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Backet from '../card/main';
+
 
 
 const styles = {
@@ -37,11 +36,10 @@ class Header extends React.PureComponent {
     }
     render(){
         const { classes } = this.props;
+       
         return (     
             <Toolbar id='toolbar' className='con'>
-                <IconButton id='menuIcon' className={classes.menuButton} color='inherit' aria-label='Menu'>
-                    <MenuIcon />
-                </IconButton>
+                {(localStorage.getItem('user')) ? <Link to='/shops' style={{textDecoration: 'none', color: 'black'}}><Button id='signInButton' color='inherit'>Shops</Button></Link> : null }
                 <Typography id='h6' variant='h6' color='inherit' className={classes.grow}>
                     <Link to='/' style={{textDecoration: 'none', color: 'black'}}>Instacart</Link>
                 </Typography>
