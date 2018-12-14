@@ -12,7 +12,7 @@ class OrdersProductsController < ApplicationController
   def show
     render json: @orders_product
   end
-  
+
   # POST /orders_products
   def create
     @orders_product = OrdersProduct.new(orders_product_params)
@@ -37,8 +37,10 @@ class OrdersProductsController < ApplicationController
 
   # DELETE /orders_products/1
   def destroy
+    orders_product=OrdersProduct.find(params[:id])
     @temp= Order.find_by_id(@orders_product.order.id).pCost - (@orders_product.product.price*@orders_product.quantinity)
     Order.find_by_id(@orders_product.order.id).update({:pCost => @temp})
+    
     @orders_product.destroy
   end
 
