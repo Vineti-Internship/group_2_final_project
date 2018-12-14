@@ -8,7 +8,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import NInput from './numberInput'
 import CModal from './modal'
@@ -16,7 +15,7 @@ import CModal from './modal'
 const styles = {
   card: {
     maxWidth: 345,
-    minHeight: '265px !important'
+    minHeight: '330px !important'
   },
   media: {
     // ⚠️ object-fit is not supported by IE 11.
@@ -24,8 +23,8 @@ const styles = {
     backgroundSize:'cover'
   },
   fmedia:{
+    height:"100%",
     maxWidth: 500,
-    minHeight:300,
     maxHeight:'60vh',
   }
 };
@@ -37,11 +36,11 @@ const ImgMediaCard=(props)=> {
             <CardActionArea className='RemoveStyle'>
                 <CardMedia
                 component="img"
-                alt="Contemplative Reptile"
+                alt={props.data.title}
                 className={classes.media}
                 height="140"
                 image={props.data.imageUrl}
-                title="Contemplative Reptile"
+                title={props.data.title}
                 />
                 <CardContent className='RemoveStyle'>
                 <CModal   title={props.data.title} >
@@ -49,6 +48,8 @@ const ImgMediaCard=(props)=> {
                         {props.data.title}
                     </Typography>
                     <CardMedia
+                        component="img"
+                        alt={props.data.title}
                         className={classes.fmedia}
                         image={props.data.imageUrl}
                         title={props.data.title}
@@ -63,10 +64,7 @@ const ImgMediaCard=(props)=> {
                 </CardContent>
             </CardActionArea>
             <CardActions className='RemoveStyle marginB' >
-                <NInput />
-                <Button size="small"  color="primary">
-                    Add to Card
-                </Button>
+                <NInput pId={props.data.pId} />
             </CardActions>
          </Card>
     );
@@ -74,6 +72,7 @@ const ImgMediaCard=(props)=> {
 
 ImgMediaCard.propTypes = {
   classes: PropTypes.object.isRequired,
+  handleOnClick: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(ImgMediaCard);

@@ -4,12 +4,12 @@
 .marginB{
     margin-bottom: 25px !important;
 }
-/* body{
-    overflow-y:hidden
-} */
+body{
+    overflow-x:hidden
+}
 .wrap{
     /* overflow-y:auto; */
-    padding-top:50px;
+    /* padding-top:50px; */
     height: inherit;
     max-height:100%;
 }

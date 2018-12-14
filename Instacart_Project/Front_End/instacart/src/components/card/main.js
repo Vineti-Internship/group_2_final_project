@@ -8,12 +8,12 @@ import {getOrder} from '../../actions/addProduct';
 
 class Backet extends React.PureComponent {
     componentDidMount() {
-        this.props.getOrder(1);
+        this.props.getOrder(this.props.uId);
         //just constant now ,read from localStorage 
     }
     render() {
         return (
-            <PopoverB count={0} >
+            <PopoverB count={this.props.currentDbOrder.length} >
             <Grid
                 container
                 direction="column"
@@ -24,7 +24,7 @@ class Backet extends React.PureComponent {
                 <Typography component="h5" variant="h5">
                     Your Current order
                 </Typography>
-                {( this.props.currentDbOrder)?
+                {( this.props.currentDbOrder[0] && this.props.currentDbOrder[0].product)?
                         this.props.currentDbOrder.map((element,index)=>{
                             return (
                                 <Product title={element.product.Name} key={index}
@@ -37,13 +37,6 @@ class Backet extends React.PureComponent {
 
                         }):null
                 }
-                {/* <Product title="Standard gyros Baguetta"
-                thumbnailUrl='https://www.menu.am/resources/default/img/restaurant_products/small/1479058039-1242.jpeg'
-                quantinity={1}
-                price={1100}
-                store="Mr. Gyros"
-                />
-                                                  */}
             </Grid>
             </PopoverB>
         );
@@ -52,7 +45,8 @@ class Backet extends React.PureComponent {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        currentDbOrder: state.orders
+        currentDbOrder: state.orders,
+        uId: state.users.user.id
     }
 }
 const mapDispatchToProps =  (dispatch) => {

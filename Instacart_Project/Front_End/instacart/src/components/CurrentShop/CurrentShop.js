@@ -20,7 +20,7 @@ class CurrentShop extends React.PureComponent {
                         this.props.currentShopProducts.map((element) => {
                         return (
                             <Grid item  key={element.id}>
-                                <Single data={{price:element.price,imageUrl:element.imageUrl,title:element.Name,desc: element.description}}/>
+                                <Single data={{pId: element.id, price:element.price,imageUrl:element.imageUrl,title:element.Name,desc: element.description}}/>
                             </Grid>
                         )
                         }):<div className='loader'></div>
