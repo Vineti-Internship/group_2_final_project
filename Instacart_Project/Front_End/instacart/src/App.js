@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import SignIn from './components/Sign_In/Sign_in';
 import { SignUp } from './components/Sign_Up/Sign_up';
+import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Error from './components/Error/Error';
 import Header from './components/Header/Header';
@@ -23,6 +24,7 @@ class App extends React.Component {
             <PrivateRoute path='/shops/:id' exact component={CurrentShop} />
             <Route component={Error}/>
           </Switch>
+          <Footer/>
         </React.Fragment>
       </Router>
     )
