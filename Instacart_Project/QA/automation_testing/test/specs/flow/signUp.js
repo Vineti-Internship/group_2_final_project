@@ -11,7 +11,7 @@ describe('SignUp functionality', () => {
             homePageObject.navigateToInstacart();
             homePageObject.clickOnSignUpButton();
             const signUpText = signUpPageObject.getHeaderText();
-            assert.equal(signUpText, 'Sign Up');
+            assert.equal(signUpText, 'SIGN UP');
         })
         it('Check that create account with email "user@email.am"', () =>{
             signUpPageObject.setFirstName();
