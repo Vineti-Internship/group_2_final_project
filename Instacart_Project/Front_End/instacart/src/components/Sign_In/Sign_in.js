@@ -54,7 +54,7 @@ class SignIn extends React.PureComponent {
 
     renderRedirect = () => {
         if(this.state.redirect) {
-            return <Redirect to='/'/>;
+            return <Redirect to='/shops'/>;
         }
     }
     

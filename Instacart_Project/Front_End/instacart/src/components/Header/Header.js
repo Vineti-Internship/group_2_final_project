@@ -64,4 +64,10 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-export default connect(null, mapDispatchToProps)(withStyles(styles)(Header));
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.users.user
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header));
