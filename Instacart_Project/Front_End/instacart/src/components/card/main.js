@@ -7,6 +7,7 @@ import CModal from '../food/modal'
 import Price from './pricing'
 import {connect} from 'react-redux';
 import {getOrder} from '../../actions/orderActions';
+import Button from '@material-ui/core/Button';
 
 class Backet extends React.Component {
     async componentDidMount() {
@@ -53,6 +54,10 @@ class Backet extends React.Component {
                     </Grid> 
                     <CModal mv='mv' title="Select A Courier" >
                         <Price />
+                        <Button style={{marginBottom:'5px',marginTop:'30px'}}  variant='contained' color='primary'>
+                            Total Cost {(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
+                            <br />Place Order
+                        </Button>
                     </CModal>
  
                 </div>
