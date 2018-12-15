@@ -1,0 +1,6 @@
+{
+    "giantShop": "//div[@class = 'wrap']//div[1]//h6/a",
+    "posShop": "//div[@class = 'wrap']//div[2]//h6/a",
+    "chiriknerShop": "//div[@class = 'wrap']//div[3]//h6/a",
+    "smartFoodShop": "//div[@class = 'wrap']//div[4]//h6/a"
+}
