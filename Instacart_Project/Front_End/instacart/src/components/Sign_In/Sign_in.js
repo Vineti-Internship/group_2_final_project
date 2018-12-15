@@ -60,18 +60,18 @@ class SignIn extends React.PureComponent {
     
     render() {
         return (
-          <React.Fragment>
-            {this.renderRedirect()}
-            <div className='con'>
-                <h1 id='h1'>Sign In</h1>
-                <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = { this.onChange } />
-                <br></br>
-                <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = { this.onChange } />
-                <br></br>
-                <input type='submit' value='Submit' onClick= {this.handleSignIn}/>
-                <p style={{color: "red"}}>{this.props.errorMessage}</p>
-            </div>
-          </React.Fragment>
+            <React.Fragment>
+                {this.renderRedirect()}
+                <div className='con'>
+                    <h1 id='h1'>Sign In</h1>
+                    <input type='text' placeholder='Email' name='email' value={this.state.email} onChange = { this.onChange } />
+                    <br></br>
+                    <input type='password' placeholder='Password' name='password' value={this.state.password} onChange = { this.onChange } />
+                    <br></br>
+                    <input type='submit' value='Submit' onClick= {this.handleSignIn}/>
+                    <p style={{color: 'red'}}>{this.props.errorMessage}</p>
+                </div>
+            </React.Fragment>
         );
     }
 }

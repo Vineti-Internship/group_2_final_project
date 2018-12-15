@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import {signOutUser} from '../../actions/signInAction';
 import './Header.css';
 import PropTypes from 'prop-types';
@@ -60,12 +60,12 @@ const mapDispatchToProps = (dispatch) => {
         signOutUser: () => {
             dispatch(signOutUser());
         }
-    }
-}
+    };
+};
 
 const mapStateToProps = (state) => {
     return {
         user: state.users.user
-    }
-}
+    };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header));
