@@ -4,17 +4,16 @@ import Grid from '@material-ui/core/Grid';
 import PopoverB from './popover'
 import Product from './horizontal_card'
 import {connect} from 'react-redux';
-import {getOrder} from '../../actions/addProduct';
+import {getOrder} from '../../actions/orderActions';
 
-class Backet extends React.PureComponent {
+class Backet extends React.Component {
     async componentDidMount() {
         const a = await JSON.parse(localStorage.getItem('user'));
-        this.props.getOrder(a.id);           
-        //just constant now ,read from localStorage 
+        this.props.getOrder(a.id);       
     }
     render() {
         return (
-            <PopoverB count={this.props.currentDbOrder.length} >
+            <PopoverB count={(this.props.currentDbOrder)?this.props.currentDbOrder.length:''} >
             <Grid
                 container
                 direction="column"
@@ -22,13 +21,18 @@ class Backet extends React.PureComponent {
                 justify="center"
                 alignItems="center"
             >
-                <Typography component="h5" variant="h5">
-                    Your Current order
-                </Typography>
-                {( this.props.currentDbOrder[0] && this.props.currentDbOrder[0].product)?
+                <Grid item>                                         
+                    <Typography component="h5" variant="h5">
+                        Your Current order
+                    </Typography>
+                </Grid> 
+                {( this.props.currentDbOrder &&  this.props.currentDbOrder[0] && this.props.currentDbOrder[0].product)?
                         this.props.currentDbOrder.map((element,index)=>{
                             return (
-                                <Product title={element.product.Name} key={index}
+                                <Product 
+                                id={element.id} 
+                                title={element.product.Name} 
+                                key={index}
                                 thumbnailUrl={element.product.imageUrl}
                                 quantinity={element.quantinity}
                                 price={element.product.price}
@@ -38,6 +42,11 @@ class Backet extends React.PureComponent {
 
                         }):null
                 }
+                <Grid item>                                         
+                    <Typography component="h5" variant="h5">
+                        Total Cost {(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
+                    </Typography>
+                </Grid> 
             </Grid>
             </PopoverB>
         );
@@ -57,4 +66,3 @@ const mapDispatchToProps =  (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Backet);
-// export default Backet;

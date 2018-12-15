@@ -1,5 +1,5 @@
 class OrdersProductsController < ApplicationController
-  before_action :set_orders_product, only: [:show, :update, :destroy]
+  before_action :set_orders_product, only: [:show, :update]
 
   # GET /orders_products
   def index
@@ -37,11 +37,11 @@ class OrdersProductsController < ApplicationController
 
   # DELETE /orders_products/1
   def destroy
-    orders_product=OrdersProduct.find(params[:id])
-    @temp= Order.find_by_id(@orders_product.order.id).pCost - (@orders_product.product.price*@orders_product.quantinity)
-    Order.find_by_id(@orders_product.order.id).update({:pCost => @temp})
+    @order_product=OrdersProduct.find(params[:id])
+    @temp= Order.find_by_id(@order_product.order.id).pCost - (@order_product.product.price*@order_product.quantinity)
+    Order.find_by_id(@order_product.order.id).update({:pCost => @temp})
     
-    @orders_product.destroy
+    @order_product.destroy
   end
 
   private

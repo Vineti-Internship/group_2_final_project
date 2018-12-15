@@ -2,7 +2,7 @@ import React from 'react';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
-import {addProduct} from '../../actions/addProduct';
+import {addProduct} from '../../actions/orderActions';
 
 class nInput extends React.PureComponent{
     constructor(props){
@@ -10,7 +10,6 @@ class nInput extends React.PureComponent{
         this.state={
             value:1
         };
-        console.log(props.pId);
     }
     onChangeHandl(value){
         const nvalue=parseInt(value);
@@ -26,6 +25,9 @@ class nInput extends React.PureComponent{
             'order_id':this.props.oId,
             'product_id':this.props.pId,
             'quantinity': q
+        });
+        this.setState({
+            value:1
         });
     }
     render(){

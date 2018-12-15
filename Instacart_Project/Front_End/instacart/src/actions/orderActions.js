@@ -1,4 +1,4 @@
-import {ADD_TO_ORDER,GET_ORDERS}  from './actionTypes';
+import {ADD_TO_ORDER,GET_ORDERS,REMOVE_FROM_ORDER}  from './actionTypes';
 import {generalFetch} from '../helpers/generalFetch'
 
 export const getOrder = (userId) => {
@@ -25,3 +25,12 @@ export const addProduct = (obj) => {
         });
     }
 };
+export const deleteP = (id) => {
+    return async (dispatch) => {
+        await generalFetch(`orders_products/${id}`, 'DELETE'); 
+        dispatch({
+            type: REMOVE_FROM_ORDER,
+            payload: id
+        });
+    }
+}

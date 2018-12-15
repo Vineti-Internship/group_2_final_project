@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // import Fab from '@material-ui/core/Fab';
-import DeleteIcon from '@material-ui/icons/Delete';
+import Delete from './deleteIcon'
 
 const styles = () => ({
     card: {
@@ -49,7 +49,7 @@ const MediaControlCard= (props)=> {
                         <Typography variant="subtitle1" color="textSecondary">
                             Quantinity: {props.quantinity}
                         </Typography>
-                        <DeleteIcon style={{color : 'gray'}} />
+                        <Delete id={props.id} />
                     </CardContent>
                 </div>
                 <CardMedia

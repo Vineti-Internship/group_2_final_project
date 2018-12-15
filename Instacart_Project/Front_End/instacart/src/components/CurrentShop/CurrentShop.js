@@ -13,7 +13,7 @@ class CurrentShop extends React.PureComponent {
         return (
             <div className='wrap'>
                 <Typography style={{marginBottom:25}} variant='h3'>
-                    { (this.props.currentShopProducts[0])? this.props.currentShopProducts[0].sName :'Welcome'}
+                    { (this.props.currentShopProducts && this.props.currentShopProducts[0])? this.props.currentShopProducts[0].sName :'Welcome'}
                 </Typography>
                 <SGrid>
                     {( this.props.currentShopProducts)?

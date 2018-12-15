@@ -20,7 +20,7 @@ export const generalFetch = async (url, method, body={}, headers = defaultHeader
                 headers
             });            
         }
-        if(response.ok){
+        if(response.ok && method!=='DELETE'){
             const data = await response.json();
             return data;
         } else {
