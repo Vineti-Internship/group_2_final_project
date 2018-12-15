@@ -5,15 +5,26 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 // import Button from '@material-ui/core/Button';
 
-const getModalStyle=()=> {
+const getModalStyle=(mv)=> {
   const top = 50;
   const left = 50;
 
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
+  if(mv){
+        return {
+            top: `${top}%`,
+            left: `${left}%`,
+            transform: `translate(-${top}%, -${left}%)`,
+            minWidth:930,
+            minHeight: 300,
+            backgroundColor: 'rgb(70, 54, 54,0.5)'
+        };
+  }else{
+    return {
+        top: `${top}%`,
+        left: `${left}%`,
+        transform: `translate(-${top}%, -${left}%)`
+    };
+  }
 }
 
 const styles = theme => ({
@@ -43,17 +54,17 @@ class SimpleModal extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className='RemoveStyle padB'>
+        
+      <div className={`RemoveStyle padB ${(this.props.mv)?'mv':''}`}>
         <Typography variant="h6" color='primary' onClick={this.handleOpen}>
             {this.props.title}
         </Typography>
 
         <Modal
-          className='RemoveStyle'
           open={this.state.open}
           onClose={this.handleClose}
         >
-          <div style={getModalStyle()} className={classes.paper}>
+          <div style={getModalStyle(this.props.mv)} className={classes.paper}>
   
             {this.props.children}
           </div>

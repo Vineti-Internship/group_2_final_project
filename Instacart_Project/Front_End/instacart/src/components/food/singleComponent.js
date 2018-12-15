@@ -43,7 +43,7 @@ const ImgMediaCard=(props)=> {
                 title={props.data.title}
                 />
                 <CardContent className='RemoveStyle'>
-                <CModal   title={props.data.title} >
+                <CModal mv=''  title={props.data.title} >
                     <Typography variant="h6" align='center' id="modal-title">
                         {props.data.title}
                     </Typography>
