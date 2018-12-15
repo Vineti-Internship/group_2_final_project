@@ -1,0 +1,18 @@
+{
+    "firstProduct": "//div[@class = 'wrap']//div[1]//div[@class = 'RemoveStyle padB']/h6",
+    "secondProduct": "//div[@class = 'wrap']//div[2]//div[@class = 'RemoveStyle padB']/h6",
+    "thirdProduct": "//div[@class = 'wrap']//div[3]//div[@class = 'RemoveStyle padB']/h6",
+    "firstProductPrice": "//div[@class = 'wrap']//div[1]//div[@class = 'RemoveStyle padB']/following-sibling::h6",
+    "secondProductPrice": "//div[@class = 'wrap']//div[2]//div[@class = 'RemoveStyle padB']/following-sibling::h6",
+    "thirdProductPrice": "//div[@class = 'wrap']//div[3]//div[@class = 'RemoveStyle padB']/following-sibling::h6",
+    "firstProductInput": "//div[@class = 'wrap']//div[1]//input",
+    "secondProductInput": "//div[@class = 'wrap']//div[2]//input",
+    "thirdProductInput": "//div[@class = 'wrap']//div[3]//input",
+    "firstProductAddToCard": "//div[@class = 'wrap']//div[1]//input/parent::div//following-sibling::button",
+    "secondProductAddToCard": "//div[@class = 'wrap']//div[2]//input/parent::div//following-sibling::button",
+    "thirdProductAddToCard": "//div[@class = 'wrap']//div[3]//input/parent::div//following-sibling::button",
+    "card": "//button[@aria-label = 'Card']",
+    "deleteProduct": "//button[@title = 'Delete']",
+    "totalCost": "//div[@class = 'foot']//h5",
+    "shop": "//button[@id = 'signInButton']"
+}
