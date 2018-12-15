@@ -3,5 +3,5 @@
     "homePageText":"//h1",
     "signUp" : "//a[@id = 'signUpButton']/span",
     "signIn" : "//button[@id = 'signInButton']/span",
-    "signOut" : "//button[@id = 'signInButton']/span"
+    "signOut" : "//div[@id = 'toolbar']/button[@id = 'signInButton']"
 }
