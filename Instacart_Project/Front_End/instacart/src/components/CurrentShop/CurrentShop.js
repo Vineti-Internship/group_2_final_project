@@ -13,36 +13,36 @@ class CurrentShop extends React.PureComponent {
         return (
             <div className='wrap'>
                 <Typography style={{marginBottom:25}} variant='h3'>
-                  { (this.props.currentShopProducts[0])? this.props.currentShopProducts[0].sName :'Welcome'}
+                    { (this.props.currentShopProducts[0])? this.props.currentShopProducts[0].sName :'Welcome'}
                 </Typography>
                 <SGrid>
                     {( this.props.currentShopProducts)?
                         this.props.currentShopProducts.map((element) => {
-                        return (
-                            <Grid item  key={element.id}>
-                                <Single data={{pId: element.id, price:element.price,imageUrl:element.imageUrl,title:element.Name,desc: element.description}}/>
-                            </Grid>
-                        )
+                            return (
+                                <Grid item  key={element.id}>
+                                    <Single data={{pId: element.id, price:element.price,imageUrl:element.imageUrl,title:element.Name,desc: element.description}}/>
+                                </Grid>
+                            );
                         }):<div className='loader'></div>
-                }
+                    }
                 </SGrid>
             </div>
-        )
+        );
     }
 }
 
 const mapStateToProps = (state) => {
     return {
         currentShopProducts: state.shops.currentShopProducts
-    }
-}
+    };
+};
 
 const mapDispatchToProps =  (dispatch) => {
     return {
         getShopProducts: (shopId) => {
             dispatch(getShopProducts(shopId));
         }
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentShop);

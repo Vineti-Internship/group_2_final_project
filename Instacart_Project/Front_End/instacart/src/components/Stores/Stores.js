@@ -17,31 +17,31 @@ class Shops extends React.PureComponent {
                 <SGrid>
                     { ( this.props.shops)?
                         this.props.shops.map((element) => {
-                        return (
-                            <Grid item  key={element.id}>
-                               <Single data={{logo:element.logo,title:element.name,desc:element.description,index:element.id}}></Single>
-                            </Grid>                                           
-                        )
-                    }):<div className='loader'></div>
-                }
+                            return (
+                                <Grid item  key={element.id}>
+                                   <Single data={{logo:element.logo,title:element.name,desc:element.description,index:element.id}}></Single>
+                                </Grid>                                           
+                            );
+                        }):<div className='loader'></div>
+                    }
                 </SGrid>
             </div>
-        )
+        );
     }
 }
 
 const mapStateToProps = (state) => {
     return {
         shops: state.shops.shops
-    }
-}
+    };
+};
 
 const mapDispatchToProps =  (dispatch) => {
     return {
         getShops: () => {
             dispatch(getShops());
         }
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shops);

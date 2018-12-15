@@ -60,7 +60,7 @@ const MediaControlCard= (props)=> {
             </Card>
         </Grid>
     );
-}
+};
 
 MediaControlCard.propTypes = {
     classes: PropTypes.object.isRequired,

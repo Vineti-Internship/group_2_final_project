@@ -44,24 +44,24 @@ export class SignUp extends React.PureComponent {
 
         if(this.inputValidation()){
             await fetch('http://localhost:3000/users', {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify ({   
-                            first_Name: this.state.firstName,
-                            last_Name: this.state.lastName, 
-                            email: this.state.email,
-                            address: this.state.address,
-                            phone: this.state.phone,
-                            password: this.state.password,
-                            password_confirmation: this.state.confirmPassword,
-                        })
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify ({   
+                    first_Name: this.state.firstName,
+                    last_Name: this.state.lastName, 
+                    email: this.state.email,
+                    address: this.state.address,
+                    phone: this.state.phone,
+                    password: this.state.password,
+                    password_confirmation: this.state.confirmPassword,
+                })
         
-                    });
+            });
         
-                    this.setRedirect();
+            this.setRedirect();
         }
     
     }
@@ -101,7 +101,7 @@ export class SignUp extends React.PureComponent {
         
         this.setState({
             inputErrors
-        })
+        });
         return isValid;
     }
     

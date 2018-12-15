@@ -9,8 +9,8 @@ class nInput extends React.PureComponent{
         super();
         this.state={
             value:1
-        }
-        console.log(props.pId)
+        };
+        console.log(props.pId);
     }
     onChangeHandl(value){
         const nvalue=parseInt(value);
@@ -23,9 +23,9 @@ class nInput extends React.PureComponent{
     handleClick=()=>{
         const q = this.state.value;
         this.props.addProduct({
-            "order_id":this.props.oId,
-            "product_id":this.props.pId,
-            "quantinity": q
+            'order_id':this.props.oId,
+            'product_id':this.props.pId,
+            'quantinity': q
         });
     }
     render(){
@@ -36,20 +36,20 @@ class nInput extends React.PureComponent{
                     Add to Card
                 </Button>
             </React.Fragment>
-        )
+        );
     }
 }
 const mapStateToProps = (state) => {
     return {     
         oId: (state.orders[0])?state.orders[0].order.id:null,
-    }
-}
+    };
+};
 const mapDispatchToProps = (dispatch) => {
     return {
-      addProduct: (obj)=>{
-          dispatch(addProduct(obj));
+        addProduct: (obj)=>{
+            dispatch(addProduct(obj));
         }
-    }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(nInput);
