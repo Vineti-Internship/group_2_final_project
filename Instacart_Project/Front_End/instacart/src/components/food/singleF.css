@@ -8,8 +8,6 @@ body{
     overflow-x:hidden
 }
 .wrap{
-    /* overflow-y:auto; */
-    /* padding-top:50px; */
     height: inherit;
     min-height: 250px;
     max-height:100%;
@@ -41,4 +39,11 @@ body{
     100% {
         transform: rotate(360deg);
     }
+}
+.foot{
+    padding: 30px 0px;
+}
+.foot button{
+    display: block;   
+    width: 100%;
 }

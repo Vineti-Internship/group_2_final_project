@@ -5,11 +5,16 @@ const initialState = [];
 export default (order = initialState, action) => {
     switch (action.type) {
     case actionTypes.ADD_TO_ORDER:
-        const norder =[...order,action.payload];
-        norder.forEach(element => {
-            element.order.pCost=+element.order.pCost+ (action.payload.quantinity*action.payload.product.price);
-        });
-        return norder;
+        if(!order || !order.length)
+            return [action.payload];
+        else
+        {
+            const norder =[...order,action.payload];   
+            norder.forEach(element => {
+                element.order.pCost = +element.order.pCost + (+action.payload.quantinity * (+action.payload.product.price));
+            });
+            return norder;
+        }
     case actionTypes.GET_ORDERS:
         return (action.payload!==undefined)?action.payload:null;
     case actionTypes.REMOVE_FROM_ORDER:
