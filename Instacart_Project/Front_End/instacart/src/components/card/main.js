@@ -1,10 +1,10 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import PopoverB from './popover'
 import Product from './horizontal_card'
 import CModal from '../food/modal'
+import Price from './pricing'
 import {connect} from 'react-redux';
 import {getOrder} from '../../actions/orderActions';
 
@@ -13,6 +13,7 @@ class Backet extends React.Component {
         const a = await JSON.parse(localStorage.getItem('user'));
         this.props.getOrder(a.id);       
     }
+    
     render() {
         return (
             <PopoverB count={(this.props.currentDbOrder)?this.props.currentDbOrder.length:0} >
@@ -50,19 +51,8 @@ class Backet extends React.Component {
                             Total Cost {(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
                         </Typography>
                     </Grid> 
-                    <CModal   title="Select A Courier" >
-                        {/* <CardMedia
-                            component="img"
-                            alt={props.data.title}
-                            className={classes.fmedia}
-                            image={props.data.imageUrl}
-                            title={props.data.title}
-                            />
-                        <CardContent>
-                        <Typography variant="body1" style={{fontSize:'1.2rem'}} paragraph >
-                            {props.data.desc}
-                        </Typography>
-                        </CardContent>              */}
+                    <CModal mv='mv' title="Select A Courier" >
+                        <Price />
                     </CModal>
  
                 </div>
