@@ -42,8 +42,9 @@ class nInput extends React.PureComponent{
     }
 }
 const mapStateToProps = (state) => {
+    console.log(state)
     return {     
-        oId: (state.orders[0])?state.orders[0].order.id:null,
+        oId: (state.orders[0] && state.orders[0].order)?state.orders[0].order.id:null,
     };
 };
 const mapDispatchToProps = (dispatch) => {

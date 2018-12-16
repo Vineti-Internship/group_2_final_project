@@ -20,9 +20,9 @@ class FinalOrdersController < ApplicationController
     Order.find_by_id(@final_order.order.id).update({:pCost =>  @final_order.order.pCost })
 
     if @final_order.save
-      UserMailer.order_details(@final_order).deliver_now
+    #   UserMailer.order_details(@final_order).deliver_now
       render json: @final_order, status: :created, location: @final_order
-    end
+    # end
     else
       render json: @final_order.errors, status: :unprocessable_entity
     end
