@@ -1,5 +1,5 @@
 class CouriersController < ApplicationController
-  before_action :set_courier, only: [:show, :update, :destroy]
+  before_action :set_courier, only: [ :update, :destroy]
 
   # GET /couriers
   def index
@@ -8,9 +8,10 @@ class CouriersController < ApplicationController
     render json: @couriers
   end
 
-  # GET /couriers/1
+  # GET /couriers/Free
   def show
-    render json: @courier
+    @typeC = Courier.where(["type_name = ?",params[:id] ]).sample 
+    render json: @typeC
   end
 
   # POST /couriers
@@ -46,6 +47,6 @@ class CouriersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def courier_params
-      params.require(:courier).permit(:type_name, :price, :image)
+      params.require(:courier).permit(:type_name, :price, :image,:name)
     end
 end

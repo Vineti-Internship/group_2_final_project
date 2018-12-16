@@ -11,9 +11,9 @@ default from: "Instacart@gmail.com"
     mail(to: user.email, subject: "Sign Up Confirmation")
   end
 
-  # def order_details(user)
-  #   @user = user
+  def order_details(order)
+    @order = order
 
-  #   mail(to: user.email, subject: "Your Order Details")
-  # end
+    mail(to: order.user.email, subject: "Your Order Details")
+  end
 end

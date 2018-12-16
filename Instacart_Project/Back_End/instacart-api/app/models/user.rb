@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :orders   
+  has_many :orders  
+  has_many :final_orders
+
   acts_as_token_authenticatable
   
   # Include default devise modules. Others available are:
