@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
 import {confirmOrder} from '../../actions/orderActions';
+import { Redirect } from 'react-router-dom'
 
 const tiers = [
     {
@@ -34,7 +35,7 @@ const tiers = [
       buttonVariant: 'contained',
     },
     {
-      title: 'premium',
+      title: 'Premium',
       subheader:'We will send you Email about order  details',
       price: 5000,
       description: [
@@ -49,7 +50,8 @@ class Pricing extends React.PureComponent{
     constructor(){
         super();
         this.state={
-            activeIndex:1
+            activeIndex:1,
+            redirect: false
         }
     }
     clickHandler(i){
@@ -57,10 +59,16 @@ class Pricing extends React.PureComponent{
             activeIndex:i
         });
     }
+    renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/shops' />
+        }
+    }
     confirm(courier){
-        // console.log(courier);
-        // console.log(this.props.currentDbOrder);
         this.props.confirmOrder(this.props.currentDbOrder[0].order.id,this.props.currentDbOrder[0].order.user_id,courier)
+        this.setState({
+            redirect: true
+        })
     }
     render(){
     return (
@@ -98,6 +106,7 @@ class Pricing extends React.PureComponent{
                 </Grid>
             ))}
             </Grid>
+            {this.renderRedirect()}
             <Button onClick={()=>this.confirm(tiers[this.state.activeIndex].title)} style={{marginBottom:'5px',marginTop:'30px'}}  variant='contained' color='primary'>
                             Total Cost {+this.props.pCost + tiers[this.state.activeIndex].price}
                             <br />Place Order
