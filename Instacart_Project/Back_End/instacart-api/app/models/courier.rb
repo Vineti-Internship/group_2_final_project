@@ -6,7 +6,7 @@ class Courier < ApplicationRecord
     :message    => "%{value} is not a valid type_name" }
 
     validates :price,
-    :inclusion  => { :in => [ 0, 20, 50],
+    :inclusion  => { :in => [ 0, 2000, 5000],
     :message    => "%{value} is not a valid price" }  
     
     validates :name, presence: true, length: {maximum: 50}

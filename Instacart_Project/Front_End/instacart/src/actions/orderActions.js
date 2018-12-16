@@ -36,17 +36,17 @@ export const deleteP = (id) => {
 }
 export const confirmOrder = (oId,uId,cType)=>{
     return async (dispatch) => {
-        const courier = await generalFetch(`couriers/${cType}`, 'GET');
-        // if(!uId){
-        //     const user =await JSON.parse(localStorage.getItem('user'))
-        //     const order = await generalFetch('orders', 'POST',{'order':{'user_id':user.id }});
-        //     oId=order.id;
-        // }
-        await generalFetch('final_orders', 'POST',{'final_order':{'user_id':uId,"order_id":oId,"courier_id":courier.id }});
-        const order = await generalFetch('orders', 'POST',{'order':{'user_id':uId }});
-        dispatch({
-            type: CONFIRM_ORDER,
-            payload: []
-        });
+        try{
+            const courier = await generalFetch(`couriers/${cType}`, 'GET');
+            await generalFetch('final_orders', 'POST',{'final_order':{'user_id':uId,"order_id":oId,"courier_id":courier.id }});
+            const order = await generalFetch('orders', 'POST',{'order':{'user_id':uId }});
+            dispatch({
+                type: CONFIRM_ORDER,
+                payload: []
+            });
+            }
+        catch(e){
+            console.error(e)
+        }
     }
 }
