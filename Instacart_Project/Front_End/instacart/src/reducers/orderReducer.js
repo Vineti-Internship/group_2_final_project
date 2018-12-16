@@ -26,6 +26,8 @@ export default (order = initialState, action) => {
             element.order.pCost = +element.order.pCost- price;
         });
         return nord; 
+    case actionTypes.CONFIRM_ORDER:
+        return [action.payload]
     default:
       return order;
   }

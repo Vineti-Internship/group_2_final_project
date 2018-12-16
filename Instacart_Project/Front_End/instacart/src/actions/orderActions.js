@@ -1,4 +1,4 @@
-import {ADD_TO_ORDER,GET_ORDERS,REMOVE_FROM_ORDER}  from './actionTypes';
+import {ADD_TO_ORDER,GET_ORDERS,REMOVE_FROM_ORDER,CONFIRM_ORDER}  from './actionTypes';
 import {generalFetch} from '../helpers/generalFetch'
 
 export const getOrder = (userId) => {
@@ -31,6 +31,17 @@ export const deleteP = (id) => {
         dispatch({
             type: REMOVE_FROM_ORDER,
             payload: id
+        });
+    }
+}
+export const confirmOrder = (oId,uId,cType)=>{
+    return async (dispatch) => {
+        const courier = await generalFetch(`couriers/${cType}`, 'GET');
+        await generalFetch('final_orders', 'POST',{'final_order':{'user_id':uId,"order_id":oId,"courier_id":courier.id }});
+        const order = await generalFetch('orders', 'POST',{'order':{'user_id':uId }});
+        dispatch({
+            type: CONFIRM_ORDER,
+            payload: order
         });
     }
 }

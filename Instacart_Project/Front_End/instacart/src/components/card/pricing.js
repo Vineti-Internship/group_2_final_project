@@ -7,12 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
+import {connect} from 'react-redux';
+import {confirmOrder} from '../../actions/orderActions';
 
 const tiers = [
     {
       title: 'Free',
       subheader:'Press Place Order to Continue',
-      price: '0',
+      price: 0,
       description: [
         'Experience <1 year',
         'Speed: Slow',
@@ -23,7 +25,7 @@ const tiers = [
     {
       title: 'Regular',
       subheader: 'Most popular',
-      price: '20',
+      price: 2000,
       description: [
         'Experience [1..9] months',
         'Speed: Medium',
@@ -33,8 +35,8 @@ const tiers = [
     },
     {
       title: 'premium',
-      subheader:'Press Place Order to Continue',
-      price: '50',
+      subheader:'We will send you Email about order  details',
+      price: 5000,
       description: [
         'Experience >9 months',
         'Speed: Fast',
@@ -55,43 +57,67 @@ class Pricing extends React.PureComponent{
             activeIndex:i
         });
     }
+    confirm(courier){
+        // console.log(courier);
+        // console.log(this.props.currentDbOrder);
+        this.props.confirmOrder(this.props.currentDbOrder[0].order.id,this.props.currentDbOrder[0].order.user_id,courier)
+    }
     render(){
     return (
-        <Grid  container spacing={40} alignItems="flex-end">
-        {tiers.map( (tier,i) => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title}  md={4}>
-            <Card>
-                <CardHeader
-                title={tier.title}
-                subheader={(i===this.state.activeIndex)?tier.subheader:''}
-                titleTypographyProps={{ align: 'center' }}
-                subheaderTypographyProps={{ align: 'center' }}
-                action={tier.title === 'Regular' ? <StarIcon /> : null}
-                />
-                <CardContent>
-                <div /*className={classes.cardPricing}*/>
-                    <Typography component="h2" variant="h3" color="textPrimary">
-                    {tier.price} $
-                    </Typography>
-                </div>
-                {tier.description.map(line => (
-                    <Typography variant="subtitle1" align="center" key={line}>
-                    {line}
-                    </Typography>
-                ))}
-                </CardContent>
-                <CardActions /*className={classes.cardActions}*/ >
-                <Button onClick={()=>this.clickHandler(i)} style={{marginBottom:'5px'}} fullWidth variant={(i===this.state.activeIndex)?'contained':'outlined'} color='primary'>
-                    {tier.buttonText}
-                </Button>
-                </CardActions>
-            </Card>
+        <React.Fragment>
+            <Grid  container spacing={40} alignItems="flex-end">
+            {tiers.map( (tier,i) => (
+                // Enterprise card is full width at sm breakpoint
+                <Grid item key={tier.title}  md={4}>
+                <Card>
+                    <CardHeader
+                    title={tier.title}
+                    subheader={(i===this.state.activeIndex)?tier.subheader:''}
+                    titleTypographyProps={{ align: 'center' }}
+                    subheaderTypographyProps={{ align: 'center' }}
+                    action={tier.title === 'Regular' ? <StarIcon /> : null}
+                    />
+                    <CardContent>
+                    <div /*className={classes.cardPricing}*/>
+                        <Typography component="h2" variant="h3" color="textPrimary">
+                        {tier.price} AMD
+                        </Typography>
+                    </div>
+                    {tier.description.map(line => (
+                        <Typography variant="subtitle1" align="center" key={line}>
+                        {line}
+                        </Typography>
+                    ))}
+                    </CardContent>
+                    <CardActions /*className={classes.cardActions}*/ >
+                    <Button onClick={()=>this.clickHandler(i)} style={{marginBottom:'5px'}} fullWidth variant={(i===this.state.activeIndex)?'contained':'outlined'} color='primary'>
+                        {tier.buttonText}
+                    </Button>
+                    </CardActions>
+                </Card>
+                </Grid>
+            ))}
             </Grid>
-        ))}
-        </Grid>
+            <Button onClick={()=>this.confirm(tiers[this.state.activeIndex].title)} style={{marginBottom:'5px',marginTop:'30px'}}  variant='contained' color='primary'>
+                            Total Cost {+this.props.pCost + tiers[this.state.activeIndex].price}
+                            <br />Place Order
+            </Button>
+        </React.Fragment>
         )
     }
 }
-export default Pricing;
-// export default withStyles(styles)(Pricing);
+const mapStateToProps = (state) => {
+    return {
+        currentDbOrder: state.orders,
+    }
+}
+const mapDispatchToProps =  (dispatch) => {
+    return {
+        confirmOrder: (oId,uId,cType) => {
+            dispatch(confirmOrder(oId,uId,cType));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pricing);
+

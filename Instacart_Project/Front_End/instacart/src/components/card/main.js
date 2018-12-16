@@ -53,11 +53,8 @@ class Backet extends React.Component {
                         </Typography>
                     </Grid> 
                     <CModal mv='mv' title="Select A Courier" >
-                        <Price />
-                        <Button style={{marginBottom:'5px',marginTop:'30px'}}  variant='contained' color='primary'>
-                            Total Cost {(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
-                            <br />Place Order
-                        </Button>
+                        <Price pCost={(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? (this.props.currentDbOrder[0].order.pCost ):0 } />
+
                     </CModal>
  
                 </div>
