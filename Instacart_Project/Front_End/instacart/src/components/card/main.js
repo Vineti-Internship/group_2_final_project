@@ -46,17 +46,21 @@ class Backet extends React.Component {
 
                         }):null
                 }
-                <div className='foot'>
-                    <Grid item>                                         
-                        <Typography component="h5" variant="h5">
-                            Total Cost {(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
-                        </Typography>
-                    </Grid> 
-                    <CModal mv='mv' title="Select A Courier" >
-                        <Price pCost={(this.props.currentDbOrder && this.props.currentDbOrder[0]  &&  this.props.currentDbOrder[0].order)? (this.props.currentDbOrder[0].order.pCost ):0 } />
+                <div className='foot'> 
+                {(this.props.currentDbOrder && this.props.currentDbOrder.length)?
+                    <React.Fragment>
+                        <Grid item>                                         
+                            <Typography component="h5" variant="h5">
+                                Total Cost {(this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
+                            </Typography>
+                        </Grid> 
+                    
+                        <CModal mv='mv' title="Select A Courier" >
+                            <Price pCost={(this.props.currentDbOrder[0].order)? (this.props.currentDbOrder[0].order.pCost ):0 } />
 
-                    </CModal>
- 
+                        </CModal>
+                    </React.Fragment>:null
+                    }
                 </div>
             </Grid>
             </PopoverB>

@@ -27,7 +27,7 @@ export default (order = initialState, action) => {
         });
         return nord; 
     case actionTypes.CONFIRM_ORDER:
-        return [action.payload]
+        return []
     default:
       return order;
   }
