@@ -46,15 +46,36 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   
+
+  # Esi block arec accounts ))
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.mailgun.org",
+  #   port: 587,
+  #   domain: "sandbox364d5799512e4e589c828b556c3ef969.mailgun.org",
+  #   authentication: "plain",
+  #   user_name: "postmaster@sandbox364d5799512e4e589c828b556c3ef969.mailgun.org",
+  #   password: "dc3dd35ffd834984476c3aa00a64a528-b3780ee5-e9fffed0"
+  # }
+
+
+
+
+  config.action_mailer.delivery_method = :sendmail
+   
+ 
+  
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.mailgun.org",
-    port: 587,
-    domain: "sandbox364d5799512e4e589c828b556c3ef969.mailgun.org",
-    authentication: "plain",
-    user_name: "postmaster@sandbox364d5799512e4e589c828b556c3ef969.mailgun.org",
-    password: "dc3dd35ffd834984476c3aa00a64a528-b3780ee5-e9fffed0"
-  }
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'localhost:3000',
+  user_name:            'instacart.arm@gmail.com',
+  password:             'insta.123456',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
