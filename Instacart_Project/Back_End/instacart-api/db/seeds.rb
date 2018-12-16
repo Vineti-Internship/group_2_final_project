@@ -26,5 +26,3 @@ Product.create(Name: 'Milk Chocolate And Caramel Drizzle Popcorn', price: 899, s
 Courier.create(type_name: 'Free', price: 0, image: 'https://pp.userapi.com/c846122/v846122737/14eb66/HXckfjE0PIA.jpg')
 Courier.create(type_name: 'Regular', price: 20, image: 'https://pp.userapi.com/c846122/v846122737/14eb5c/-kKOdLD4IJ0.jpg')
 Courier.create(type_name: 'Premium', price: 50, image: 'https://pp.userapi.com/c846122/v846122737/14eb52/vb0y8q4dkcU.jpg')
-Order.create(user_id: 1, pCost: 1900)
-Orders_Product.create(order_id: 1, product_id: 2, quantinity: 2)
