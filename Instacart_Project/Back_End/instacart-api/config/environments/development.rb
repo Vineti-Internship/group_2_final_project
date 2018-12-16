@@ -31,7 +31,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -44,7 +44,17 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-
+  config.action_mailer.perform_deliveries = true
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mailgun.org",
+    port: 587,
+    domain: "sandbox364d5799512e4e589c828b556c3ef969.mailgun.org",
+    authentication: "plain",
+    user_name: "postmaster@sandbox364d5799512e4e589c828b556c3ef969.mailgun.org",
+    password: "dc3dd35ffd834984476c3aa00a64a528-b3780ee5-e9fffed0"
+  }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
