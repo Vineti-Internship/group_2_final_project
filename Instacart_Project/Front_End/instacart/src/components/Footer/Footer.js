@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
                 <div className='email'>
                     <h2>Contact Email</h2>
-                    <h3>Instacart@gmail.com</h3>
+                    <h3>Instacart.arm@gmail.com</h3>
                 </div>
             </div>
 

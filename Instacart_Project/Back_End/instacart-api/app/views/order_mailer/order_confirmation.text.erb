@@ -1,0 +1,29 @@
+
+<%= @final_order.user.first_Name %>,
+Thank you for ordering.
+
+This is your check for Order N<%= @final_order.id %>.
+
+User.
+
+<%= @final_order.user.first_Name %>
+<%= @final_order.user.last_Name %>
+<%= @final_order.user.address %>
+<%= @final_order.user.phone %>
+
+Products.
+
+<% for i in 0...@final_order.order.products.length %>
+Description. <%= @final_order.order.products[i].description %>
+Price. <%= @final_order.order.products[i].price %> AMD
+<% end %>
+
+Courier.
+
+<%= @final_order.courier.type_name %>
+<%= @final_order.courier.price %> AMD
+
+Total Price.
+
+<%= @final_order.order.pCost %> AMD
+
