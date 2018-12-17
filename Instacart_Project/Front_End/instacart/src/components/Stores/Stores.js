@@ -19,7 +19,7 @@ class Shops extends React.PureComponent {
                         this.props.shops.map((element) => {
                             return (
                                 <Grid item  key={element.id}>
-                                   <Single data={{logo:element.logo,title:element.name,desc:element.description,index:element.id}}></Single>
+                                    <Single data={{logo:element.logo,title:element.name,desc:element.description,index:element.id}}></Single>
                                 </Grid>                                           
                             );
                         }):<div className='loader'></div>

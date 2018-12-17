@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 // import Fab from '@material-ui/core/Fab';
-import Delete from './deleteIcon'
+import Delete from './deleteIcon';
 
 const styles = () => ({
     card: {

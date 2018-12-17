@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class OrderTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
     test 'should not save order without params' do
         order = Order.new
         assert_not order.save ,'Saved the order without params'

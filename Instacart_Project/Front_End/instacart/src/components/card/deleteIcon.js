@@ -7,16 +7,16 @@ import {deleteP} from '../../actions/orderActions';
 
 class Remove extends React.PureComponent{
     handle=()=>{
-        this.props.deleteP(this.props.id)
+        this.props.deleteP(this.props.id);
     }
     render(){
         return(
-          <Tooltip title="Delete">
-            <IconButton aria-label="Delete">
-                <DeleteIcon onClick={this.handle} style={{color : 'gray'}} />
-            </IconButton>
-          </Tooltip>
-        )
+            <Tooltip title="Delete">
+                <IconButton aria-label="Delete">
+                    <DeleteIcon onClick={this.handle} style={{color : 'gray'}} />
+                </IconButton>
+            </Tooltip>
+        );
     }
     
 }
@@ -25,8 +25,8 @@ const mapDispatchToProps =  (dispatch) => {
         deleteP: (elementId) => {
             dispatch(deleteP(elementId));
         }
-    }
-}
+    };
+};
 
 export default connect(null, mapDispatchToProps)(Remove);
 // export default Remove;

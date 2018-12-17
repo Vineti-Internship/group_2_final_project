@@ -1,10 +1,10 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import PopoverB from './popover'
-import Product from './horizontal_card'
-import CModal from '../food/modal'
-import Price from './pricing'
+import PopoverB from './popover';
+import Product from './horizontal_card';
+import CModal from '../food/modal';
+import Price from './pricing';
 import {connect} from 'react-redux';
 import {getOrder} from '../../actions/orderActions';
 import Button from '@material-ui/core/Button';
@@ -18,51 +18,51 @@ class Backet extends React.Component {
     render() {
         return (
             <PopoverB count={(this.props.currentDbOrder)?this.props.currentDbOrder.length:0} >
-            <Grid
-                container
-                direction="column"
-                spacing={16}
-                justify="center"
-                alignItems="center"
-            >
-                <Grid item>                                         
-                    <Typography component="h5" variant="h5">
+                <Grid
+                    container
+                    direction="column"
+                    spacing={16}
+                    justify="center"
+                    alignItems="center"
+                >
+                    <Grid item>                                         
+                        <Typography component="h5" variant="h5">
                         Your Current order
-                    </Typography>
-                </Grid> 
-                {( this.props.currentDbOrder &&  this.props.currentDbOrder[0] && this.props.currentDbOrder[0].product)?
+                        </Typography>
+                    </Grid> 
+                    {( this.props.currentDbOrder &&  this.props.currentDbOrder[0] && this.props.currentDbOrder[0].product)?
                         this.props.currentDbOrder.map((element,index)=>{
                             return (
                                 <Product 
-                                id={element.id} 
-                                title={element.product.Name} 
-                                key={index}
-                                thumbnailUrl={element.product.imageUrl}
-                                quantinity={element.quantinity}
-                                price={element.product.price}
-                                store={element.product.sName}
+                                    id={element.id} 
+                                    title={element.product.Name} 
+                                    key={index}
+                                    thumbnailUrl={element.product.imageUrl}
+                                    quantinity={element.quantinity}
+                                    price={element.product.price}
+                                    store={element.product.sName}
                                 />
-                            )
+                            );
 
                         }):null
-                }
-                <div className='foot'> 
-                {(this.props.currentDbOrder && this.props.currentDbOrder.length)?
-                    <React.Fragment>
-                        <Grid item>                                         
-                            <Typography component="h5" variant="h5">
-                                Total Cost {(this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
-                            </Typography>
-                        </Grid> 
-                    
-                        <CModal mv='mv' title="Select A Courier" >
-                            <Price pCost={(this.props.currentDbOrder[0].order)? (this.props.currentDbOrder[0].order.pCost ):0 } />
-
-                        </CModal>
-                    </React.Fragment>:null
                     }
-                </div>
-            </Grid>
+                    <div className='foot'> 
+                        {(this.props.currentDbOrder && this.props.currentDbOrder.length)?
+                            <React.Fragment>
+                                <Grid item>                                         
+                                    <Typography component="h5" variant="h5">
+                                Total Cost {(this.props.currentDbOrder[0].order)? this.props.currentDbOrder[0].order.pCost:0 }
+                                    </Typography>
+                                </Grid> 
+                    
+                                <CModal mv='mv' title="Select A Courier" >
+                                    <Price pCost={(this.props.currentDbOrder[0].order)? (this.props.currentDbOrder[0].order.pCost ):0 } />
+
+                                </CModal>
+                            </React.Fragment>:null
+                        }
+                    </div>
+                </Grid>
             </PopoverB>
         );
     }
@@ -70,14 +70,14 @@ class Backet extends React.Component {
 const mapStateToProps = (state) => {
     return {
         currentDbOrder: state.orders,
-    }
-}
+    };
+};
 const mapDispatchToProps =  (dispatch) => {
     return {
         getOrder: (userId) => {
             dispatch(getOrder(userId));
         }
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Backet);
