@@ -21,7 +21,7 @@ describe('Take order (example)', () => {
         signUpPageObject.setFirstName('Ella');
         signUpPageObject.setLastName('Harutyunyan');
         signUpPageObject.setEmail('ellavinetiam@gmail.com');
-        signUpPageObject.setAddress('Hanrapetyun street, building 61');
+        signUpPageObject.setAddress();
         signUpPageObject.setPhoneNumber('+37411575070');
         signUpPageObject.setPassword();
         signUpPageObject.setConfirmPassword();
@@ -47,5 +47,10 @@ describe('Take order (example)', () => {
         productPageObject.clickOnCard();
         const totalCost = productPageObject.getTotalCost();
         assert.equal(totalCost, 'Total Cost 13460');
+    })
+    it('choose premium courier and place order', () => {
+        productPageObject.clickOnSelectCourier();
+        productPageObject.clickOnChoosePremiumCourier();
+        productPageObject.clickOnPlaceOrder();
     })
 })

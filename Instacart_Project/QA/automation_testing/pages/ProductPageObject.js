@@ -43,4 +43,16 @@ module.exports['default'] = class ProductPageObject extends BasePageObject{
     clickOnShopButton(){
         this.click(this.selector.shop);
     }
+    clickOnSelectCourier(){
+        this.click(this.selector.selectCourier);
+    }
+    clickOnChooseFreeCourier(){
+        this.click(this.selector.chooseFreeCourier);
+    }
+    clickOnChoosePremiumCourier(){
+        this.click(this.selector.choosePremiumCourier);
+    }
+    clickOnPlaceOrder(){
+        this.click(this.selector.placeOrder);
+    }
 }

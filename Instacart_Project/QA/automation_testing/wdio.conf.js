@@ -130,7 +130,7 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        timeout: 30000
+        timeout: 40000
     },
     //
     // =====
