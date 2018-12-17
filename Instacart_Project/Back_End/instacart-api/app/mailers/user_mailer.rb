@@ -9,10 +9,4 @@ class UserMailer < ApplicationMailer
 
     mail(to: user.email, subject: "Sign Up Confirmation")
   end
-
-  def order_details(order)
-    @order = order
-
-    mail(to: order.user.email, subject: "Your Order Details")
-  end
 end
