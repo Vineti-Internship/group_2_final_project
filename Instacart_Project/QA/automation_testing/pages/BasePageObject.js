@@ -28,7 +28,7 @@ module.exports['default'] = class BasePageObject {
       element.waitForExist();
       element.waitForEnabled();
       element.click();
-      browser.pause(2000);
+      browser.pause(3000);
       }
     
     setValue(selector, value, index = 0) {

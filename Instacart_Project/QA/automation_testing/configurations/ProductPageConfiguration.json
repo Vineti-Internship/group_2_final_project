@@ -14,5 +14,9 @@
     "card": "//button[@aria-label = 'Card']",
     "deleteProduct": "//button[@title = 'Delete']",
     "totalCost": "//div[@class = 'foot']//h5",
-    "shop": "//button[@id = 'signInButton']"
+    "shop": "//button[@id = 'signInButton']",
+    "selectCourier": "//div[@class = 'foot']//h6",
+    "placeOrder": "//div[@id = 'simple-popper']/following-sibling::div/div[@role = 'document']/button",
+    "chooseFreeCourier": "//div[@id = 'simple-popper']/following-sibling::div/div[@role = 'document']/div/div[1]//button",
+    "choosePremiumCourier": "//div[@id = 'simple-popper']/following-sibling::div/div[@role = 'document']/div/div[3]//button"
 }
